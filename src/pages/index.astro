@@ -1,11 +1,17 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "@src/layouts/Layout.astro";
+import Container from "@components/Containers/Container.astro";
+import MainMenu from "@src/components/Menus/MainMenu.astro";
+import Logo from "@src/components/Logos/logo.astro";
+import mainMenuJson from "@src/data/main-menu.json";
 ---
 
 <Layout>
-	<Welcome />
+	<Container class="flex gap-4 justify-between border border-rose-500">
+		<Logo />
+		<MainMenu items={mainMenuJson.items} />
+	</Container>
+	<Container class="border border-lime-500 full"> container full </Container>
+	<Container class="border border-amber-500"> container </Container>
+	<Container class="border border-b-blue-400 wide"> container wide </Container>
 </Layout>
