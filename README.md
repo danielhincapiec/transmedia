@@ -6,11 +6,13 @@
 - [ ] fonts
 - [ ] colors
 
-
 ## core
 
 - [x] astro 5.0
+- [x] tailwind/vite
 - [x] tailwind
+- [x] postcss
+- [x] postcss-custom-media
 - [x] alias path
 - [x] custom media
 - [x] assets
@@ -22,3 +24,9 @@
 	- [x] container
 	- [X] menu
 
+## files
+
+tsconfig.json
+postcss.config.cjs
+content.config.ts
+astro.config.mjs
