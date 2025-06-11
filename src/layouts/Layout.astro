@@ -1,20 +1,21 @@
 ---
 import "@src/assets/css/tailwind.css";
+import "@src/assets/css/variables.css";
+import "@src/assets/css/breakpoints.css";
+import "@src/assets/css/html.css";
+// import "@fontsource/poppins/900.css";
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<title>{title ? `${title} | Mi Sitio Web` : "Mi Sitio Web"}</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="/src/assets/css/variables.css" />
-		<link rel="stylesheet" href="/src/assets/css/breakpoints.css" />
-		<link rel="stylesheet" href="/src/assets/css/html.css" />
-		<title>{title ? `${title} | Mi Sitio Web` : "Mi Sitio Web"}</title>
 	</head>
 	<body>
 		<slot />

@@ -1,8 +1,8 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"); */
 @import "tailwindcss";
 
 @theme {
 	--breakpoint-7xl: 96rem;
-	
 	--container-5xl: 64rem;
 	--container-3xs: 16rem;
 	--container-2xs: 18rem;
@@ -17,5 +17,8 @@
 	--container-6xl: 72rem;
 	--container-7xl: 80rem;
 	--container-8xl: 96rem;
+
+	--font-body: "Roboto", sans-serif;
+	--font-title: "Poppins", sans-serif;
 
 }
