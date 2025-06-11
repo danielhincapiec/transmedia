@@ -1,15 +1,15 @@
 {
 	"items": [
 		{
-			"name": "Inicio",
+			"name": "Uno",
 			"href": "/"
 		},
 		{
-			"name": "Servicios",
+			"name": "Dos",
 			"href": "/"
 		},
 		{
-			"name": "Contacto",
+			"name": "Tres",
 			"href": "/"
 		}
 	]

@@ -1,4 +1,7 @@
 ---
+import ButtonHamburger from "@components/Menus/ButtonHamburger.svelte";
+import ButtonClose from "@components/Menus/ButtonClose.svelte";
+
 const { items: menuItems } = Astro.props;
 ---
 
@@ -17,13 +20,7 @@ const { items: menuItems } = Astro.props;
 		</ul>
 	</div>
 
-	<button
-		class="flex justify-between flex-col cursor-pointer p-2 size-10 flex-shrink-0 js-pair-main-menu js-trigger-main-menu"
-	>
-		<div class="line h-[2px] bg-black"></div>
-		<div class="line h-[2px] bg-black"></div>
-		<div class="line h-[2px] bg-black"></div>
-	</button>
+	<ButtonHamburger client:load />
 
 	<div
 		class="panel z-0 top-0 right-0 w-screen h-screen fixed js-target-main-menu js-pair-main-menu flex justify-end"
@@ -34,16 +31,7 @@ const { items: menuItems } = Astro.props;
 		</div>
 
 		<div class="content bg-white max-w-96 w-full z-20 overflow-y-scroll !pt-18">
-			<button
-				class="absolute top-2 right-6 size-10 flex items-center justify-center cursor-pointer group z-20 js-pair-main-menu js-trigger-main-menu"
-			>
-				<span
-					class="absolute top-1/2 right-0 w-full h-[2px] bg-black transition-transform duration-200 ease-in-out rotate-45 group-hover:rotate-90"
-				></span>
-				<span
-					class="absolute top-1/2 left-0 w-full h-[2px] bg-black transition-transform duration-200 ease-in-out -rotate-45 group-hover:-rotate-90"
-				></span>
-			</button>
+			<ButtonClose client:load />
 
 			<ul class="">
 				{
@@ -78,13 +66,13 @@ const { items: menuItems } = Astro.props;
 </style>
 
 <script>
-	import changeClass from "@assets/js/change-class";
+	// import changeClass from "@assets/js/change-class";
 
-	changeClass({
-		triggers: ".js-trigger-main-menu",
-		targets: ".js-target-main-menu",
-		eventType: "click",
-		pairToClass: ".js-pair-main-menu",
-		newClass: "show",
-	});
+	// changeClass({
+	// 	triggers: ".js-trigger-main-menu",
+	// 	targets: ".js-target-main-menu",
+	// 	eventType: "click",
+	// 	pairToClass: ".js-pair-main-menu",
+	// 	newClass: "show",
+	// });
 </script>

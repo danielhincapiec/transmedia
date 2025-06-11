@@ -15,6 +15,7 @@
 - [x] postcss-custom-media
 - [x] alias path
 - [x] custom media
+	[x] svelte
 - [x] assets
 	- [x] css/breakpoints
 	- [x] css/html
