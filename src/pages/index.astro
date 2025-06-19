@@ -8,10 +8,13 @@ import mainMenuJson from "@src/data/main-menu.json";
 ---
 
 <Layout>
-	<Container class="flex gap-4 justify-between border border-rose-500">
-		<Logo />
-		<MainMenu items={mainMenuJson.items} />
+	<Container class="border border-rose-500 min-h-lvh">
+		<div class="flex gap-4 justify-between">
+			<Logo />
+			<MainMenu items={mainMenuJson.items} />
+		</div>
 	</Container>
+
 	<Container class="border border-lime-500 full"> container full </Container>
 	<Container class="border border-amber-500"> container </Container>
 	<Container class="border border-b-blue-400 wide">

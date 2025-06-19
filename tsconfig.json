@@ -1,11 +1,7 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
+  "extends": [
+    "astro/tsconfigs/strict",
+    "./.svelte-kit/tsconfig.json"
   ],
   "compilerOptions": {
     "baseUrl": ".",
@@ -23,5 +19,14 @@
         "./src/assets/*"
       ]
     }
-  }
+  },
+  "include": [
+    "src",
+    "svelte.config.js",
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ]
 }
