@@ -1,0 +1,39 @@
+---
+import ButtonHamburger from "@components/Menus/ButtonHamburger.svelte";
+import ButtonClose from "@components/Menus/ButtonClose.svelte";
+
+const { items: menuItems, active, class: ClassName } = Astro.props;
+---
+
+<nav class=`menu gap-1.5 ${Astro.props.class ||" "}`>
+	<ul
+		class="grid [grid-template-columns:repeat(5,min-content)] items-center bg-custom-pink rounded-2xl overflow-hidden"
+	>
+		{
+			menuItems.map((item) => (
+				<li
+					class={`w-full h-full flex items-center ${active === item.name ? "active" : null}`}
+				>
+					<a
+						class="text-fluid-base flex h-full justify-between items-center text-white font-semibold py-2 px-3 hover:bg-custom-pink-dark w-min leading-2.5 text-center "
+						href={item.href}
+					>
+						{item.name}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<a
+		class="text-fluid-base bg-custom-pink text-white flex items-center py-2 px-3 rounded-2xl font-semibold hover:bg-custom-pink-dark text-center"
+		href="/"
+	>
+		Asi se hizo
+	</a>
+</nav>
+
+<style is:global>
+	.active {
+		background-color: var(--color-custom-pink-dark);
+	}
+</style>

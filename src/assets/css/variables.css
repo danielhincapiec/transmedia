@@ -32,12 +32,6 @@
 	/* page */
 	--page-gap: clamp(var(--spacing-2), 4vw, var(--spacing-4));
 
-	/* color raw */
-	--color-black: #000;
-	--color-white: #fff;
-	--color-gray-100: #f7fafc;
-	--color-fuschia: #e3009b;
-
 	/* color semantic */
 	--color-page: var(--color-white);
 	--color-text: var(--color-black);

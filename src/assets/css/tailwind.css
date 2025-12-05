@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -18,7 +18,18 @@
 	--container-7xl: 80rem;
 	--container-8xl: 96rem;
 
-	--font-body: "Roboto", sans-serif;
-	--font-title: "Poppins", sans-serif;
+	--font-body: "Montserrat", sans-serif;
+
+		/* color raw */
+	--color-custom-black: #000;
+	--color-custom-white: #fff;
+	--color-custom-gray-100: #f7fafc;
+	--color-custom-pink: #E56D80;
+	--color-custom-pink-dark: #B94658;
+	--color-custom-blue: #22526B;
+	--color-custom-gray: #424040;
+	--color-custom-corn: #F3EEE7;
+	--color-custom-sand: #cecbbf;
 
 }
+

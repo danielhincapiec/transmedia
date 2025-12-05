@@ -1,0 +1,24 @@
+---
+import Layout from "@src/layouts/Layout.astro";
+import Test from "@components/Test/Test.svelte";
+import Container from "@components/Containers/Container.astro";
+import MainMenu from "@src/components/Menus/MainMenu.astro";
+import Logo from "@src/components/Logos/logo.astro";
+import mainMenuJson from "@src/data/main-menu.json";
+---
+
+<Layout>
+	<Container class="border border-rose-500">
+		<div class="flex gap-4 justify-between">
+			<Logo />
+			<MainMenu items={mainMenuJson.items} />
+		</div>
+	</Container>
+
+	<Container class="border border-lime-500 full"> container full </Container>
+	<Container class="border border-amber-500"> container </Container>
+	<Container class="border border-b-blue-400 wide">
+		container wide
+		<Test nombre="Svelte" client:load />
+	</Container>
+</Layout>

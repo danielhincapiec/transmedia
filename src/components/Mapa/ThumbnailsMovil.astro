@@ -1,0 +1,69 @@
+---
+import Thumbnail from "@components/Mapa/Thumbnail.astro";
+
+import thumb_arhuacos from "@assets/img/thumb-arhuacos.png";
+import thumb_ette from "@assets/img/thumb-ette.png";
+import thumb_kankuamo from "@assets/img/thumb-kankuamo.png";
+import thumb_kogui from "@assets/img/thumb-kogui.png";
+import thumb_taganga from "@assets/img/thumb-taganga.png";
+import thumb_wayuu from "@assets/img/thumb-wayuu.png";
+import thumb_wiwa from "@assets/img/thumb-wiwa.png";
+
+const { class: ClassName } = Astro.props;
+---
+
+<div
+	class=`thumbnails-movil fixed inset-0 mt-[70px] w-full h-dvh flex-col ${Astro.props.class ||" "}`
+>
+	<Thumbnail name="Wiwa Gotsezhy" src={thumb_wiwa.src} class="wiwa thumbnail" />
+	<Thumbnail name="Kogui Malezhi" src={thumb_kogui.src} class="kogui" />
+	<Thumbnail
+		name="Ette Ennaka Nara Kajmanta"
+		src={thumb_ette.src}
+		class="ette"
+	/>
+	<Thumbnail
+		name="Kankuamo Atanquez"
+		src={thumb_kankuamo.src}
+		class="kankuamo"
+	/>
+	<Thumbnail
+		name="Arhuacos Katanzama"
+		src={thumb_arhuacos.src}
+		class="arhuacos"
+	/>
+	<Thumbnail
+		name="Taganga Santa Marta"
+		src={thumb_taganga.src}
+		class="taganga"
+	/>
+	<Thumbnail name="Wayuu Santa Marta" src={thumb_wayuu.src} class="wayuu" />
+</div>
+
+<style>
+	.thumbnails-movil {
+		--size: 0.5;
+		padding: 16px;
+		/* border: 2px solid lime; */
+
+		.thumbnail {
+			margin-bottom: 10px;
+			justify-content: end;
+
+			&:nth-child(even) {
+				flex-direction: row-reverse;
+				justify-content: start;
+			}
+		}
+
+		.thumbnail__name {
+			max-width: none;
+		}
+
+		.thumbnail__img {
+			width: clamp(50px, 4vw, 110px);
+			border: 1px solid white;
+			padding: 5px;
+		}
+	}
+</style>

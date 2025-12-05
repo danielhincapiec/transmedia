@@ -12,6 +12,9 @@ body {
   margin: 0;
   max-width: 100%;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 a {
@@ -20,22 +23,11 @@ a {
 
 h1 {
   margin-top: 0;
-  line-height: 1.1;
-  font-weight: 300;
-  margin-bottom: 0.4em;
-  font-size: clamp(32px, 6vw, 50px);
-  line-height: 1em;
-  color: var(--primary);
   text-wrap: balance;
 }
 
 h2 {
   margin-top: 0;
-  margin-bottom: 0.8em;
-  line-height: 1.1;
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--secondary);
 }
 
 h3 {
@@ -44,5 +36,4 @@ h3 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1em;
 }

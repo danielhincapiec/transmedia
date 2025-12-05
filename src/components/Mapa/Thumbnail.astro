@@ -1,0 +1,43 @@
+---
+const { img, name, class: className, url } = Astro.props;
+---
+
+<a href=`/${url}` class={`thumbnail md:flex-col ${Astro.props.class || ""}`}>
+	<div class="thumbnail__name">
+		{name}
+	</div>
+	<img src={img} alt={name} class="thumbnail__img" />
+</a>
+
+<style is:global>
+	.thumbnail {
+		--size: 1;
+		pointer-events: all;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		position: relative;
+	}
+
+	.thumbnail__img {
+		width: calc(110px * var(--size));
+		display: block;
+		border-radius: 50%;
+		border: 2px solid white;
+		padding: 7px;
+		aspect-ratio: 1 / 1;
+	}
+
+	.thumbnail__name {
+		background-color: var(--color-custom-blue);
+		font-size: clamp(14px, 3vw, 16px);
+		color: white;
+		max-width: 10rem;
+		text-align: center;
+		border-radius: 10px;
+		box-shadow: 1px 2px 8px #00000047;
+		padding: 8px 10px;
+		line-height: 1.3;
+	}
+</style>

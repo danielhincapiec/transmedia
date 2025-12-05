@@ -1,0 +1,75 @@
+---
+import ButtonHamburger from "@components/Menus/ButtonHamburger.svelte";
+import ButtonClose from "@components/Menus/ButtonClose.svelte";
+import LogoMinCultura from "@assets/img/logo-mincultura.png";
+import LogoSantaMarta from "@assets/img/logo-santa-marta.png";
+
+const { items: menuItems, class: className } = Astro.props;
+---
+
+<nav
+	class=`nav w-full flex gap-12 bg-custom-pink px-1.5 justify-between ${Astro.props.class || ""}`
+>
+	<div class="flex items-center">
+		<ul class="hidden md:flex gap-10">
+			{
+				menuItems.map((item) => (
+					<li>
+						<a href={item.href} class="text-white hover:underline">
+							{item.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+
+	<ButtonHamburger client:load />
+
+	<div
+		class="panel z-0 top-0 right-0 w-screen h-screen fixed js-target-main-menu js-pair-main-menu flex justify-end"
+	>
+		<div
+			class="bg fixed inset-0 z-0 bg-black/90 h-full w-full js-pair-main-menu js-trigger-main-menu show"
+		>
+		</div>
+
+		<div class="content bg-white max-w-96 w-full z-20 overflow-y-scroll !pt-18">
+			<ButtonClose client:load />
+
+			<ul class="">
+				{
+					menuItems.map((item) => (
+						<li class="block">
+							<a
+								href={item.href}
+								class="block p-2 md:p-4 xl:p-6 hover:bg-gray-100"
+							>
+								{item.name}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<style>
+	.nav {
+		padding-left: var(--page-gap);
+		padding-right: var(--page-gap);
+	}
+
+	.panel {
+		will-change: transform;
+		transform: translate(100%, 0);
+		transition: 0.3s transform;
+
+		&.show {
+			transform: translate(0, 0);
+			will-change: transform;
+			transition: 0.3s transform;
+		}
+	}
+</style>

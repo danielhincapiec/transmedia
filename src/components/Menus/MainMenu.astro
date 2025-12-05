@@ -1,17 +1,26 @@
 ---
 import ButtonHamburger from "@components/Menus/ButtonHamburger.svelte";
 import ButtonClose from "@components/Menus/ButtonClose.svelte";
+import LogoMinCultura from "@assets/img/logo-mincultura.png";
+import LogoSantaMarta from "@assets/img/logo-santa-marta.png";
 
-const { items: menuItems } = Astro.props;
+const { items: menuItems, class: className } = Astro.props;
 ---
 
-<nav class="flex gap-12">
-	<div class="container mx-auto flex justify-between items-center">
+<nav
+	class=`w-full flex gap-12 bg-custom-pink px-1.5 ${Astro.props.class || ""}`
+>
+	<a href="/" class="flex items-center gap-3 py-1">
+		<img src={LogoMinCultura.src} />
+		<div class="border-r-1 border-white opacity-50 h-full"></div>
+		<img src={LogoSantaMarta.src} />
+	</a>
+	<div class="mx-auto flex justify-between items-center">
 		<ul class="hidden md:flex gap-10">
 			{
 				menuItems.map((item) => (
 					<li>
-						<a href={item.href} class="hover:underline">
+						<a href={item.href} class="text-white hover:underline">
 							{item.name}
 						</a>
 					</li>

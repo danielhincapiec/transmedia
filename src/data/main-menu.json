@@ -1,15 +1,23 @@
 {
 	"items": [
 		{
-			"name": "Uno",
+			"name": "Mapa",
 			"href": "/"
 		},
 		{
-			"name": "Dos",
+			"name": "Micro documentales",
 			"href": "/"
 		},
 		{
-			"name": "Tres",
+			"name": "Relatos sonoros",
+			"href": "/"
+		},
+		{
+			"name": "Cápsulas sonoras",
+			"href": "/"
+		},
+		{
+			"name": "Foto Galerias",
 			"href": "/"
 		}
 	]
