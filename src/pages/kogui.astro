@@ -8,10 +8,13 @@ import LogoSantaMarta from "@assets/img/logo-santa-marta.png";
 import ImgMain from "@assets/img/kogui-main.jpg";
 import Sitio from "@assets/img/sitio.png";
 import Expresiones from "@assets/img/expresiones.png";
+import Koguifondo from "@assets/img/Koguifondo.png";
+
+const koguifondo = `url(${Koguifondo.src})`;
 ---
 
 <Layout>
-	<div class="bg-custom-sand h-full">
+	<div class="koguifondo bg-custom-sand h-full">
 		<Container class="bg-custom-pink-dark full">
 			<a href="/" class="flex items-center gap-3 py-1">
 				<img src={LogoMinCultura.src} class="logo" />
@@ -23,11 +26,11 @@ import Expresiones from "@assets/img/expresiones.png";
 		<Container class="pt-3">
 			<img class="rounded-2xl w-full mb-2" src={ImgMain.src} alt="" />
 			<p class="uppercase text-sm ml-2">Pie de foto, fulanito x fulanito</p>
-			<h1 class="text-7xl mx-auto mb-8 w-max text-custom-gray">
+			<h1 class="text-7xl mx-auto mb-8 w-max text-custom-corn">
 				<span class="font-black">Kogui</span>
 				<span class="font-light">Malezhi</span>
 			</h1>
-			<h2 class="uppercase mx-auto w-max font-black text-custom-gray mb-1">
+			<h2 class="uppercase mx-auto w-max font-black text-custom-corn mb-1">
 				Documental
 			</h2>
 			<div>&nbsp</div>
@@ -39,7 +42,7 @@ import Expresiones from "@assets/img/expresiones.png";
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				referrerpolicy="strict-origin-when-cross-origin"
 				allowfullscreen></iframe>
-			<p class="w-column w-full mx-auto mb-6">
+			<p class="w-column w-full mx-auto mb-6 text-custom-corn">
 				Acsi adipiscing brevitas caecus iusto praesent rusticus torqueo ulciscor
 				volutpat. Aptent capto gilvus immitto neo quidem quis roto. Abdo augue
 				genitus imputo metuo modo roto saepius.
@@ -49,11 +52,11 @@ import Expresiones from "@assets/img/expresiones.png";
 				class="grid grid-cols-1 md:grid-cols-2 gap-5 w-column mx-auto py-3 border-y-1 border-custom-gray mb-6"
 			>
 				<div class="">
-					<h2 class="uppercase font-black text-custom-gray mb-0">
+					<h2 class="uppercase font-black text-custom-corn mb-0">
 						Relato sonoro
 					</h2>
-					<p class="font-normal text-custom-gray mb-3">En idioma Kogui</p>
-					<p>
+					<p class="font-normal text-custom-corn mb-3">En idioma Kogui</p>
+					<p class="text-custom-corn">
 						Acsi adipiscing brevitas caecus iusto praesent rusticus torqueo
 						ulciscor volutpat. Aptent capto gilvus immitto neo quidem quis roto.
 						Abdo augue genitus imputo metuo modo roto saepius.
@@ -71,7 +74,7 @@ import Expresiones from "@assets/img/expresiones.png";
 				</div>
 			</div>
 
-			<h2 class="uppercase mx-auto w-max font-black text-custom-gray mb-5">
+			<h2 class="uppercase mx-auto w-max font-black text-custom-corn mb-5">
 				Cápsulas
 			</h2>
 
@@ -112,7 +115,7 @@ import Expresiones from "@assets/img/expresiones.png";
 			</div>
 
 			<div class="w-column mx-auto py-3 border-y-1 border-custom-gray mb-10">
-				<h2 class="uppercase mx-auto w-max font-black text-custom-gray mb-5">
+				<h2 class="uppercase mx-auto w-max font-black text-custom-corn mb-5">
 					Población
 				</h2>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -120,22 +123,30 @@ import Expresiones from "@assets/img/expresiones.png";
 						<div
 							class="flex gap-2 pb-2 border-b-1 items-center border-custom-gray border-dashed"
 						>
-							<p class="text-5xl font-black flex-1">7.000</p>
-							<p class="text-sm flex-1">capto gilvus immitto neo quidem quis</p>
+							<p class="text-5xl font-black flex-1 text-custom-corn">7.000</p>
+							<p class="text-sm flex-1 text-custom-corn">
+								capto gilvus immitto neo quidem quis
+							</p>
 						</div>
 						<div
 							class="flex gap-2 pt-2 pb-2 border-b-1 items-center border-custom-gray border-dashed"
 						>
-							<p class="text-5xl font-black flex-1">6.300</p>
-							<p class="text-sm flex-1">capto gilvus immitto neo quidem quis</p>
+							<p class="text-5xl font-black flex-1 text-custom-corn">6.300</p>
+							<p class="text-sm flex-1 text-custom-corn">
+								capto gilvus immitto neo quidem quis
+							</p>
 						</div>
 						<div class="pt-2 flex gap-2 items-center">
-							<p class="text-5xl font-black flex-1 text-right">12</p>
-							<p class="text-sm flex-1">capto gilvus immitto neo quidem quis</p>
+							<p class="text-5xl font-black flex-1 text-right text-custom-corn">
+								12
+							</p>
+							<p class="text-sm flex-1 text-custom-corn">
+								capto gilvus immitto neo quidem quis
+							</p>
 						</div>
 					</div>
 					<div class="">
-						<p>
+						<p class="text-custom-corn">
 							Acsi adipiscing brevitas caecus iusto praesent rusticus torqueo
 							ulciscor volutpat. Aptent capto gilvus immitto neo quidem quis
 							roto. Abdo augue genitus imputo metuo modo roto saepius. Acsi
@@ -147,16 +158,16 @@ import Expresiones from "@assets/img/expresiones.png";
 				</div>
 			</div>
 
-			<h2 class="uppercase mx-auto w-max font-black text-custom-gray mb-4">
+			<h2 class="uppercase mx-auto w-max font-black text-custom-corn mb-4">
 				Expresiónes artísticas
 			</h2>
 			<img src={Expresiones.src} alt="" class="mb-8" />
 
-			<h2 class="uppercase mx-auto w-max font-black text-custom-gray mb-5">
+			<h2 class="uppercase mx-auto w-max font-black text-custom-corn mb-5">
 				Sitios sagrados
 			</h2>
 
-			<p class="w-column mx-auto mb-5">
+			<p class="w-column mx-auto mb-5 text-custom-corn">
 				Acsi adipiscing brevitas caecus iusto praesent rusticus torqueo ulciscor
 				volutpat. Aptent capto gilvus immitto neo quidem quis roto. Abdo augue
 				genitus imputo metuo modo roto saepius.
@@ -206,7 +217,7 @@ import Expresiones from "@assets/img/expresiones.png";
 	</div>
 </Layout>
 
-<style>
+<style define:vars={{ koguifondo }}>
 	.logo {
 		height: 40px;
 	}
@@ -216,5 +227,9 @@ import Expresiones from "@assets/img/expresiones.png";
 	}
 	.w-column {
 		max-width: 680px;
+	}
+	.koguifondo {
+		background-image: var(--koguifondo);
+		background-attachment: fixed;
 	}
 </style>
