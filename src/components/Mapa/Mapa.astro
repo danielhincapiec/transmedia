@@ -2,28 +2,32 @@
 //
 import Thumbnail from "@components/Mapa/Thumbnail.astro";
 import Menu from "@components/Menus/Menu.astro";
+
 //
 import mainMenuJson from "@src/data/main-menu.json";
+
 //
-import bgObject from "@assets/img/fondo.png";
+import bgObject from "@assets/img/fondo.jpg";
+
 //
-import bg_layer_1 from "@assets/img/layer-1.png";
-import bg_layer_2 from "@assets/img/layer-2.png";
-import bg_layer_3 from "@assets/img/layer-3.png";
-import bg_layer_4 from "@assets/img/layer-4.png";
-import bg_layer_5 from "@assets/img/layer-5.png";
-import bg_layer_6 from "@assets/img/layer-6.png";
-import bg_layer_7 from "@assets/img/layer-7.png";
-import bg_layer_8 from "@assets/img/layer-8.png";
-import bg_layer_9 from "@assets/img/layer-9.png";
+import bg_layer_1 from "@assets/img/layer-1.webp";
+import bg_layer_2 from "@assets/img/layer-2.webp";
+import bg_layer_3 from "@assets/img/layer-3.webp";
+import bg_layer_4 from "@assets/img/layer-4.webp";
+import bg_layer_5 from "@assets/img/layer-5.webp";
+import bg_layer_6 from "@assets/img/layer-6.webp";
+import bg_layer_7 from "@assets/img/layer-7.webp";
+import bg_layer_8 from "@assets/img/layer-8.webp";
+import bg_layer_9 from "@assets/img/layer-9.webp";
+
 //
 import thumb_arhuacos from "@assets/img/thumb-arhuacos.png";
 import thumb_ette from "@assets/img/thumb-ette.png";
 import thumb_kankuamo from "@assets/img/thumb-kankuamo.png";
 import thumb_kogui from "@assets/img/thumb-kogui.png";
 import thumb_taganga from "@assets/img/thumb-taganga.png";
-import thumb_wayuu from "@assets/img/thumb-wayuu.png";
 import thumb_wiwa from "@assets/img/thumb-wiwa.png";
+import thumb_wayuu from "@assets/img/thumb-wayuu.png";
 
 const bg = `url(${bgObject.src})`;
 
@@ -50,28 +54,28 @@ const { class: className } = Astro.props;
 
 <div class={`wrap-scene ${Astro.props.class || ""}`}>
 	<div style={styleString} class="scene" data-relative-input="true" id="scene">
-		<div class="layer layer-9" data-depth="0.05"></div>
-		<div class="layer layer-8" data-depth="0.2"></div>
-		<div class="layer layer-7" data-depth="0.3"></div>
+		<div class="layer layer-9" data-depth="0.1"></div>
+		<div class="layer layer-7" data-depth="0.2"></div>
+		<div class="layer layer-8" data-depth="0.3"></div>
 		<div class="layer layer-6" data-depth="0.4"></div>
 		<div class="layer layer-5" data-depth="0.5">
 			<Thumbnail
 				name="Wiwa Gotsezhy"
 				img={thumb_wiwa.src}
 				class="wiwa"
-				url="/"
+				url="wiwa-gotsezhy"
 			/>
 			<Thumbnail
 				name="Kogui Malezhi"
 				img={thumb_kogui.src}
 				class="kogui"
-				url="kogui"
+				url="kogui-malezhi"
 			/>
 			<Thumbnail
 				name="Ette Ennaka Nara Kajmanta"
 				img={thumb_ette.src}
 				class="ette"
-				url="/"
+				url="ette-ennaka-nara-kajmanta"
 			/>
 		</div>
 		<div class="layer layer-4" data-depth="0.8">
@@ -79,25 +83,25 @@ const { class: className } = Astro.props;
 				name="Kankuamo Atanquez"
 				img={thumb_kankuamo.src}
 				class="kankuamo"
-				url="/"
+				url="kankuamo-atanquez"
 			/>
 			<Thumbnail
 				name="Arhuacos Katanzama"
 				img={thumb_arhuacos.src}
 				class="arhuacos"
-				url="/"
+				url="arhuacos-katanzama"
 			/>
 			<Thumbnail
 				name="Taganga Santa Marta"
 				img={thumb_taganga.src}
 				class="taganga"
-				url="/"
+				url="taganga-santa-marta"
 			/>
 			<Thumbnail
 				name="Wayuu Santa Marta"
-				src={thumb_wayuu.src}
+				img={thumb_wayuu.src}
 				class="wayuu"
-				url="/"
+				url="wayuu-santa-marta"
 			/>
 		</div>
 		<div class="layer layer-3" data-depth="1"></div>
@@ -131,6 +135,10 @@ const { class: className } = Astro.props;
 		align-items: center;
 		pointer-events: none;
 
+		@media (width < 1024px) {
+			height: 110vh;
+		}
+
 		/* border: 3px solid fuchsia; */
 	}
 
@@ -159,7 +167,7 @@ const { class: className } = Astro.props;
 
 	.layer-1 {
 		background-image: var(--bg-layer-1-url);
-		background-position: bottom 0 left 30vw;
+		background-position: bottom -7vh left 30vw;
 		background-repeat: no-repeat;
 		background-size: 60vh auto;
 		/* border: 2px solid tomato; */
@@ -183,7 +191,7 @@ const { class: className } = Astro.props;
 
 	.layer-3 {
 		background-image: var(--bg-layer-3-url);
-		background-position: bottom 0vh center;
+		background-position: bottom 0 center;
 		background-size: auto;
 		background-repeat: no-repeat;
 		/* border: 2px solid gold; */
@@ -196,7 +204,7 @@ const { class: className } = Astro.props;
 	.layer-4 {
 		background-image: var(--bg-layer-4-url);
 		background-position: bottom 6vh center;
-		background-size: auto 40vh;
+		background-size: auto auto;
 		background-repeat: no-repeat;
 		gap: 5vw;
 		padding-left: 20vh;
@@ -207,8 +215,8 @@ const { class: className } = Astro.props;
 
 	.layer-5 {
 		background-image: var(--bg-layer-5-url);
-		background-position: bottom 0 center;
-		background-size: auto 70vh;
+		background-position: bottom 2vh center;
+		background-size: auto;
 		background-repeat: no-repeat;
 		padding-left: 5vw;
 		display: flex !important;
@@ -219,30 +227,30 @@ const { class: className } = Astro.props;
 
 	.layer-6 {
 		background-image: var(--bg-layer-6-url);
-		background-position: bottom 0 center;
-		background-size: auto 70vh;
+		background-position: bottom 4vh center;
+		background-size: auto;
 		background-repeat: no-repeat;
 	}
 
 	.layer-7 {
 		background-image: var(--bg-layer-7-url);
-		background-position: bottom 0 center;
-		background-size: auto 90vh;
+		background-position: bottom -20vh center;
+		background-size: auto;
 		background-repeat: no-repeat;
 		/* border: 2px solid gold; */
 	}
 
 	.layer-8 {
 		background-image: var(--bg-layer-8-url);
-		background-position: top center;
-		background-size: auto 90vh;
+		background-position: top 0vh left 14vw;
+		background-size: auto 81vh;
 		background-repeat: no-repeat;
 		/* border: 2px solid lime; */
 	}
 
 	.layer-9 {
 		background-image: var(--bg-layer-9-url);
-		background-position: top 10vh right 10vw;
+		background-position: top 10vh right 17vw;
 		background-size: auto 30vh;
 		background-repeat: no-repeat;
 	}
@@ -292,6 +300,11 @@ const { class: className } = Astro.props;
 				scalarX: 10,
 				scalarY: 15,
 			});
+
+			// if (parallaxInstance.orientationSupport) {
+			// 	parallaxInstance.orientationSupport = false;
+			// 	parallaxInstance.motionSupport = false;
+			// }
 		}
 	});
 </script>

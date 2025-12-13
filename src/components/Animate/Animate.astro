@@ -1,0 +1,137 @@
+---
+// ScrollAnimatedObjects.astro
+interface Props {
+	height?: string;
+}
+
+const { height = "h-screen" } = Astro.props;
+---
+
+<div class={`scroll-stage relative w-full overflow-hidden ${height} mb-4`}>
+	<!-- Objetos que entran desde la izquierda -->
+	<div
+		class="animate-obj fade-slide-left absolute top-[20%] left-0 w-32 h-32 flex items-center justify-center"
+	>
+		<slot name="obj-1" />
+	</div>
+
+	<!-- Objetos que entran desde la derecha -->
+	<div
+		class="animate-obj fade-slide-right absolute top-[40%] right-0 w-40 h-40 flex items-center justify-center rotate-12"
+	>
+		<slot name="obj-2">
+			<span class="text-white text-5xl">⭐</span>
+		</slot>
+	</div>
+
+	<!-- Objetos que suben desde abajo -->
+	<div
+		class="animate-obj slide-up absolute bottom-0 left-[30%] w-36 h-36 flex items-center justify-center"
+	>
+		<slot name="obj-3" />
+	</div>
+
+	<!-- Objetos que bajan desde arriba -->
+	<div
+		class="animate-obj slide-down absolute top-0 right-[25%] w-28 h-28 flex items-center justify-center -rotate-12"
+	>
+		<slot name="obj-4" />
+	</div>
+
+	<!-- Objeto que hace zoom -->
+	<div
+		class="animate-obj scale-in absolute top-[60%] left-[50%] -translate-x-1/2 w-44 h-44 flex items-center justify-center"
+	>
+		<slot name="obj-5" />
+	</div>
+
+	<!-- Objeto que rota -->
+	<div
+		class="animate-obj rotate-in absolute bottom-[20%] right-[15%] w-32 h-32 flex items-center justify-center"
+	>
+		<slot name="obj-6" />
+	</div>
+</div>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	const stage = document.querySelector(".scroll-stage");
+
+	if (stage) {
+		const objects = stage.querySelectorAll(".animate-obj");
+
+		objects.forEach((obj) => {
+			// Detectar tipo de animación por clase
+			const hasFadeLeft = obj.classList.contains("fade-slide-left");
+			const hasFadeRight = obj.classList.contains("fade-slide-right");
+			const hasSlideUp = obj.classList.contains("slide-up");
+			const hasSlideDown = obj.classList.contains("slide-down");
+			const hasScaleIn = obj.classList.contains("scale-in");
+			const hasRotateIn = obj.classList.contains("rotate-in");
+
+			let fromVars = { opacity: 0 };
+			let toVars = { opacity: 1, duration: 1.2, ease: "power3.out" };
+
+			if (hasFadeLeft) {
+				fromVars = { ...fromVars, x: -200 };
+				toVars = { ...toVars, x: 0 };
+			} else if (hasFadeRight) {
+				fromVars = { ...fromVars, x: 200 };
+				toVars = { ...toVars, x: 0 };
+			} else if (hasSlideUp) {
+				fromVars = { ...fromVars, y: 200 };
+				toVars = { ...toVars, y: 0 };
+			} else if (hasSlideDown) {
+				fromVars = { ...fromVars, y: -200 };
+				toVars = { ...toVars, y: 0 };
+			} else if (hasScaleIn) {
+				fromVars = { ...fromVars, scale: 0, rotation: -180 };
+				toVars = { ...toVars, scale: 1, rotation: 0 };
+			} else if (hasRotateIn) {
+				fromVars = { ...fromVars, scale: 0, rotation: 360 };
+				toVars = { ...toVars, scale: 1, rotation: 0, duration: 1.5 };
+			}
+
+			// Estado inicial
+			gsap.set(obj, fromVars);
+
+			// Animación de entrada y salida
+			ScrollTrigger.create({
+				trigger: stage,
+				start: "top 60%",
+				end: "top top",
+				onEnter: () => {
+					gsap.to(obj, toVars);
+				},
+				onLeave: () => {
+					gsap.to(obj, {
+						...fromVars,
+						duration: 0.8,
+						ease: "power2.in",
+					});
+				},
+				onEnterBack: () => {
+					gsap.to(obj, toVars);
+				},
+				onLeaveBack: () => {
+					gsap.to(obj, {
+						...fromVars,
+						duration: 0.8,
+						ease: "power2.in",
+					});
+				},
+				// markers: true, // Descomenta para debug
+			});
+		});
+	}
+</script>
+
+<style>
+	.animate-obj {
+		will-change: transform, opacity;
+	}
+</style>

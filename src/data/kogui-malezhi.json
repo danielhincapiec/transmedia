@@ -1,0 +1,52 @@
+{
+	"tituloInicio": "Kogui",
+	"tituloFin": "Malezhi",
+	"pie": "xxx",
+	"documentalParrafo": "Somos el pueblo Kogui de Malezhi, descendientes de los primeros habitantes de la Sierra Nevada. La conmemoración de los 500 años de Santa Marta es para nosotros una oportunidad de hacer visible nuestra resistencia y la profunda relación espiritual que mantenemos con este territorio sagrado.",
+	"documentalUrl": "https://www.youtube.com/embed/oZgYCG1q1ak?si=X7TsurHL0Kz5Gs1q",
+	"relatoUrl": "https://www.youtube.com/embed/vNUvxAyv3UA?si=FUnQg9sYyR_D-y4B",
+	"relatoSubtitulo": "Pueblo Kogui – Vivir en equilibrio con todos los seres",
+	"relatoParrafo": "El pueblo Kogui ha habitado ancestralmente la Sierra Nevada, reconocida por ellos como el Corazón del Mundo. Este territorio les fue dado para vivir en equilibrio con todos los seres, pero la llegada de los colonos españoles trajo despojo y ruptura. Hoy continúan trabajando para preservar su conocimiento y cuidar ese corazón que sostiene la vida.",
+	"capsulas": [
+		{
+			"url": "https://www.youtube.com/embed/malohcCg_dw?si=CrxRft3x13v9OMIR",
+			"texto": "Lengua Kogui"
+		},
+		{
+			"url": "https://www.youtube.com/embed/E3A5LZ1aL2o?si=C_IVw0FKE6XlmtAV",
+			"texto": "Mujer Kogui"
+		},
+		{
+			"url": "https://www.youtube.com/embed/1HdOXbNnPFg?si=sH7jfZ1jeKw3i-7X",
+			"texto": "Tejido Kogui"
+		}
+	],
+	"poblacionParrafo": "Somos el Pueblo Kogui, hijos e hijas de la Sierra Nevada y cuidadores del pensamiento que sostiene la vida. A través de la palabra mayor, velamos por el equilibrio del mundo y por la conexión sagrada que une a todos los seres desde el origen.",
+	"poblacion": [
+		{
+			"cifra": "XXXX",
+			"texto": "XXXX"
+		},
+		{
+			"cifra": "XXXX",
+			"texto": "XXXX"
+		},
+		{
+			"cifra": "XXXX",
+			"texto": "XXXX"
+		}
+	],
+	"fotogaleriaParrafo": "Este registro fotográfico recoge los pasos,  los gestos y las memorias que acompañaron la creación del Túnel del Tiempo en cada uno de los pueblos. Son imágenes que guardan la luz del territorio,  la palabra compartida y la fuerza espiritual que guiaron este ejercicio de comunicación propia. Fotografía: Jorge Martínez",
+	"fotogaleria": [
+		{
+			"texto": "XXXX"
+		},
+		{
+			"texto": "XXXX"
+		},
+		{
+			"texto": "XXXX"
+		}
+	],
+	"sitiosParrafo": "XXXX"
+}

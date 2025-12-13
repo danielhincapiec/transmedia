@@ -15,29 +15,29 @@ const { class: ClassName } = Astro.props;
 <div
 	class=`thumbnails-movil fixed inset-0 mt-[70px] w-full h-dvh flex-col ${Astro.props.class ||" "}`
 >
-	<Thumbnail name="Wiwa Gotsezhy" src={thumb_wiwa.src} class="wiwa thumbnail" />
-	<Thumbnail name="Kogui Malezhi" src={thumb_kogui.src} class="kogui" />
+	<Thumbnail name="Wiwa Gotsezhy" img={thumb_wiwa.src} class="wiwa thumbnail" />
+	<Thumbnail name="Kogui Malezhi" img={thumb_kogui.src} class="kogui" />
 	<Thumbnail
 		name="Ette Ennaka Nara Kajmanta"
-		src={thumb_ette.src}
+		img={thumb_ette.src}
 		class="ette"
 	/>
 	<Thumbnail
 		name="Kankuamo Atanquez"
-		src={thumb_kankuamo.src}
+		img={thumb_kankuamo.src}
 		class="kankuamo"
 	/>
 	<Thumbnail
 		name="Arhuacos Katanzama"
-		src={thumb_arhuacos.src}
+		img={thumb_arhuacos.src}
 		class="arhuacos"
 	/>
 	<Thumbnail
 		name="Taganga Santa Marta"
-		src={thumb_taganga.src}
+		img={thumb_taganga.src}
 		class="taganga"
 	/>
-	<Thumbnail name="Wayuu Santa Marta" src={thumb_wayuu.src} class="wayuu" />
+	<Thumbnail name="Wayuu Santa Marta" img={thumb_wayuu.src} class="wayuu" />
 </div>
 
 <style>

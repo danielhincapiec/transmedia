@@ -1,0 +1,186 @@
+---
+// Intro.astro
+interface Props {
+	videoSrc: string;
+	redirectUrl?: string;
+}
+
+const { videoSrc, redirectUrl = "/" } = Astro.props;
+---
+
+<div class="intro-container">
+	<div class="loading-overlay" id="loadingOverlay">
+		<div class="spinner"></div>
+		<p>Cargando...</p>
+	</div>
+
+	<video
+		id="introVideo"
+		class="intro-video"
+		preload="auto"
+		muted
+		playsinline
+		data-redirect={redirectUrl}
+	>
+		<source src={videoSrc} type="video/mp4" />
+		Tu navegador no soporta el elemento de video.
+	</video>
+
+	<button
+		class="skip-button fixed bottom-2 right-2 z-20 bg-custom-pink text-white"
+		id="skipButton"
+	>
+		Saltar Intro
+	</button>
+</div>
+
+<style>
+	.intro-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: #000;
+		z-index: 1;
+		overflow: hidden;
+	}
+
+	.intro-video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.loading-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		z-index: 10000;
+		transition: opacity 0.3s ease;
+	}
+
+	.loading-overlay.hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.spinner {
+		width: 50px;
+		height: 50px;
+		border: 4px solid rgba(255, 255, 255, 0.1);
+		border-top-color: #fff;
+		border-radius: 50%;
+		animation: spin 1s linear infinite;
+	}
+
+	.loading-overlay p {
+		color: #fff;
+		margin-top: 20px;
+		font-size: 16px;
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.skip-button {
+		position: absolute;
+		bottom: 40px;
+		right: 40px;
+		padding: 12px 24px;
+		background: var(--color-custom-pink);
+		color: white;
+		border: none;
+		border-radius: 8px;
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
+		z-index: 2;
+	}
+
+	.skip-button:hover {
+		background: var(--color-custom-pink-dark);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	.skip-button:active {
+		transform: translateY(0);
+	}
+</style>
+
+<script>
+	const video = document.getElementById("introVideo");
+	const loading = document.getElementById("loadingOverlay");
+	const skipBtn = document.getElementById("skipButton");
+	const redirectUrl = video.getAttribute("data-redirect");
+
+	function redirect() {
+		window.location.href = redirectUrl;
+	}
+
+	function hideLoadingAndPlay() {
+		loading.classList.add("hidden");
+		video.play().catch((err) => {
+			console.error("Error al reproducir:", err);
+		});
+	}
+
+	// Múltiples eventos para asegurar que el loading se oculte
+	video.addEventListener("loadeddata", hideLoadingAndPlay);
+	video.addEventListener("canplay", hideLoadingAndPlay);
+
+	// Timeout de seguridad por si los eventos no se disparan
+	setTimeout(() => {
+		if (!loading.classList.contains("hidden")) {
+			console.log("Timeout alcanzado, ocultando loading");
+			hideLoadingAndPlay();
+		}
+	}, 3000);
+
+	// Redirigir cuando el video termine
+	video.addEventListener("ended", () => {
+		console.log("Video terminado, redirigiendo...");
+		redirect();
+	});
+
+	// También escuchar cuando llega al final (backup)
+	video.addEventListener("timeupdate", () => {
+		if (video.currentTime >= video.duration - 0.5 && video.duration > 0) {
+			console.log("Video cerca del final, redirigiendo...");
+			redirect();
+		}
+	});
+
+	// Botón para saltar intro
+	skipBtn.addEventListener("click", () => {
+		console.log("Botón skip presionado");
+		redirect();
+	});
+
+	// Manejar errores de carga
+	video.addEventListener("error", (e) => {
+		console.error("Error al cargar el video:", e);
+		loading.querySelector("p").textContent = "Error al cargar. Redirigiendo...";
+		setTimeout(redirect, 2000);
+	});
+</script>

@@ -1,0 +1,14 @@
+---
+interface Props {
+	dark?: boolean;
+	class?: string;
+}
+
+const { dark = false, class: className = "" } = Astro.props;
+---
+
+<p
+	class={`uppercase text-sm ml-2 mb-4 lg:mb-1 ${dark ? "text-custom-corn" : "text-custom-gray"} ${className}`}
+>
+	<slot />
+</p>

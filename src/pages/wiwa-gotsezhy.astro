@@ -1,0 +1,170 @@
+---
+import Layout from "@src/layouts/LayoutPage.astro";
+import Container from "@components/Containers/Container.astro";
+import Iframe from "@src/components/Iframe/Iframe.astro";
+import H1 from "@src/components/Typography/H1.astro";
+import H2 from "@src/components/Typography/H2.astro";
+import P from "@src/components/Typography/P.astro";
+import Caption from "@src/components/Typography/Caption.astro";
+import Story from "@src/components/Story/Story.astro";
+import Capsules from "@src/components/Capsules/Capsules.astro";
+import Population from "@src/components/Population/Population.astro";
+import Sites from "@src/components/Sites/Sites.astro";
+import Gallery from "@src/components/Gallery/Gallery.astro";
+
+// pueblo
+import ImgMain1 from "@assets/img/kogui/main/main-1.png";
+import ImgMain2 from "@assets/img/kogui/main/main-2.png";
+import ImgMain3 from "@assets/img/kogui/main/main-3.png";
+import ImgMain4 from "@assets/img/kogui/main/main-4.png";
+
+import fondo from "@assets/img/kogui/bg/bg-1.jpg";
+
+// data pueblo
+import data from "@src/data/wiwa-gotsezhy.json";
+import MainImagen from "@src/components/MainImagen/MainImagen.astro";
+
+// gallery
+import Photo1 from "@assets/img/kogui/gallery/foto-1.webp";
+import Photo2 from "@assets/img/kogui/gallery/foto-2.webp";
+import Photo3 from "@assets/img/kogui/gallery/foto-3.webp";
+import Photo4 from "@assets/img/kogui/gallery/foto-4.webp";
+import Photo5 from "@assets/img/kogui/gallery/foto-5.webp";
+import Photo6 from "@assets/img/kogui/gallery/foto-6.webp";
+import Photo7 from "@assets/img/kogui/gallery/foto-7.webp";
+import Photo8 from "@assets/img/kogui/gallery/foto-8.webp";
+import Photo9 from "@assets/img/kogui/gallery/foto-9.webp";
+import Photo10 from "@assets/img/kogui/gallery/foto-10.webp";
+import H1Section from "@src/components/Typography/H1Section.astro";
+import Animate from "@src/components/Animate/Animate.astro";
+
+const bg = `url(${fondo.src})`;
+
+// const bg = ``;
+const gallery = [
+	{
+		url: Photo1.src,
+		texto:
+			"Acsi camur distineo haero hendrerit imputo praemitto te torqueo vulpes",
+		row: 1,
+		col: 1,
+		order: 1,
+	},
+	{
+		url: Photo2.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo3.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo4.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo5.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo6.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo7.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo8.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo9.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo10.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+];
+const sites = [
+	{
+		url: "",
+		texto: "XXXX",
+	},
+	{
+		url: "",
+		texto: "XXXX",
+	},
+	{
+		url: "",
+		texto: "XXXX",
+	},
+];
+const dark = true;
+---
+
+<Layout bg={bg} dark={dark}>
+	<Container class="pt-3">
+		<MainImagen>
+			<img src={ImgMain2.src} slot="layer-1" alt="" />
+			<img src={ImgMain3.src} slot="layer-2" alt="" />
+			<img src={ImgMain4.src} slot="layer-3" alt="" />
+			<H1Section slot="layer-4">
+				<div class="font-black">Micro</div>
+				<div class="font-light">sitios</div>
+			</H1Section>
+		</MainImagen>
+		<!-- <Caption dark={dark}>{data.pie}</Caption> -->
+		<H1
+			tituloInicio={data.tituloInicio}
+			tituloFin={data.tituloFin}
+			dark={dark}
+		/>
+
+		<H2 dark={dark}>Documental</H2>
+		<Iframe url={data.documentalUrl} />
+		<P class="mx-auto max-w-2xl mb-5" dark={dark}>{data.documentalParrafo}</P>
+		<Story subtitle={data.relatoSubtitulo} url={data.relatoUrl} dark={dark}>
+			{data.relatoParrafo}
+		</Story>
+
+		<Animate>
+			<img src={ImgMain2.src} slot="obj-1" alt="" />
+			<img src={ImgMain3.src} slot="obj-2" alt="" />
+			<img src={ImgMain3.src} slot="obj-3" alt="" />
+			<img src={ImgMain3.src} slot="obj-4" alt="" />
+			<img src={ImgMain3.src} slot="obj-5" alt="" />
+			<div slot="obj-6">asdas asd</div>
+		</Animate>
+
+		<H2 dark={dark}>Cápsulas</H2>
+		<Capsules data={data.capsulas} dark={dark} />
+		<Population data={data.poblacion} dark={dark}
+			>{data.poblacionParrafo}</Population
+		>
+		<H2 dark={dark}>Fotogaleria </H2>
+		<Gallery images={gallery} columns="4" />
+		<!-- <H2 dark={dark}>Sitios sagrados</H2> -->
+		<!-- <P class="mx-auto max-w-2xl mb-5" dark={dark}>{data.sitiosParrafo}</P> -->
+		<!-- <Sites data={sites} /> -->
+	</Container>
+</Layout>

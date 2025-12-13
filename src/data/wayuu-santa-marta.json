@@ -1,0 +1,52 @@
+{
+	"tituloInicio": "",
+	"tituloFin": "",
+	"pie": "",
+	"documentalParrafo": "",
+	"documentalUrl": "",
+	"relatoUrl": "",
+	"relatoSubtitulo": "",
+	"relatoParrafo": "",
+	"capsulas": [
+		{
+			"url": "",
+			"texto": ""
+		},
+		{
+			"url": "",
+			"texto": ""
+		},
+		{
+			"url": "",
+			"texto": ""
+		}
+	],
+	"poblacionParrafo": "",
+	"poblacion": [
+		{
+			"cifra": "",
+			"texto": ""
+		},
+		{
+			"cifra": "",
+			"texto": ""
+		},
+		{
+			"cifra": "",
+			"texto": ""
+		}
+	],
+	"fotogaleriaParrafo": "",
+	"fotogaleria": [
+		{
+			"texto": ""
+		},
+		{
+			"texto": ""
+		},
+		{
+			"texto": ""
+		}
+	],
+	"sitiosParrafo": ""
+}

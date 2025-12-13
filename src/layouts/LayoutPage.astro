@@ -1,0 +1,50 @@
+---
+import "@src/assets/css/tailwind.css";
+import "@src/assets/css/variables.css";
+import "@src/assets/css/breakpoints.css";
+import "@src/assets/css/html.css";
+import Container from "@src/components/Containers/Container.astro";
+import MainMenu from "@src/components/Menus/MainMenuPages.astro";
+import LogoMinCultura from "@assets/img/logo-mincultura.png";
+import LogoSantaMarta from "@assets/img/logo-santa-marta.png";
+import mainMenuJson from "@src/data/main-menu.json";
+import Footer from "@src/components/Footer/Footer.astro";
+
+const { title, bg, dark } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title ? `${title} | Mi Sitio Web` : "Mi Sitio Web"}</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+	</head>
+	<body class=` ${dark ? "bg-custom-gray " : "bg-custom-corn"}`>
+		<div class="h-full">
+			<Container class="bg-custom-pink-dark full">
+				<a href="/" class="flex items-center gap-3 py-1">
+					<img src={LogoMinCultura.src} class="logo" />
+					<div class="border-r-1 border-white h-full"></div>
+					<img src={LogoSantaMarta.src} class="logo" />
+				</a>
+			</Container>
+			<MainMenu items={mainMenuJson.items} class="main-menu flex z-20" />
+			<slot />
+			<Footer />
+		</div>
+	</body>
+</html>
+
+<style define:vars={{ bg }}>
+	body {
+		background-attachment: fixed;
+		background-image: var(--bg);
+	}
+
+	.logo {
+		height: 40px;
+	}
+</style>

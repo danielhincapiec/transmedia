@@ -1,9 +1,6 @@
 ---
 import ButtonHamburger from "@components/Menus/ButtonHamburger.svelte";
 import ButtonClose from "@components/Menus/ButtonClose.svelte";
-import LogoMinCultura from "@assets/img/logo-mincultura.png";
-import LogoSantaMarta from "@assets/img/logo-santa-marta.png";
-
 const { items: menuItems, class: className } = Astro.props;
 ---
 
@@ -27,7 +24,7 @@ const { items: menuItems, class: className } = Astro.props;
 	<ButtonHamburger client:load />
 
 	<div
-		class="panel z-0 top-0 right-0 w-screen h-screen fixed js-target-main-menu js-pair-main-menu flex justify-end"
+		class="panel z-50 top-0 right-0 w-screen h-screen fixed js-target-main-menu js-pair-main-menu flex justify-end"
 	>
 		<div
 			class="bg fixed inset-0 z-0 bg-black/90 h-full w-full js-pair-main-menu js-trigger-main-menu show"

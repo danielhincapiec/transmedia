@@ -1,0 +1,19 @@
+---
+import Iframe from "@components/Iframe/Iframe.astro";
+import P from "@components/Typography/P.astro";
+
+const { data, dark } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto mb-10">
+	{
+		data.map((item) => (
+			<div>
+				<Iframe url={item.url} />
+				<P class="text-center" dark={dark}>
+					{item.texto}
+				</P>
+			</div>
+		))
+	}
+</div>

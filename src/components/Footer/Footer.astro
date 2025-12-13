@@ -1,0 +1,17 @@
+---
+import Container from "@components/Containers/Container.astro";
+import LogoMinCultura from "@assets/img/logo-mincultura.png";
+import LogoSantaMarta from "@assets/img/logo-santa-marta.png";
+---
+
+<Container class="full bg-custom-pink p-6">
+	<div>
+		<a href="/" class="block md:flex items-center gap-3 py-1 w-full lg:w-max">
+			<img src={LogoMinCultura.src} class="mb-3 lg:mb-0 mx-auto" />
+			<div class="hidden lg:block border-r-1 border-white h-full"></div>
+			<p class="text-white lg:max-w-[200px] text-center lg:text-left">
+				Ministerio de las Culturas las Artes y los Saberes
+			</p>
+		</a>
+	</div>
+</Container>

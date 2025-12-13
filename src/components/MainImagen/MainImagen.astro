@@ -1,0 +1,121 @@
+---
+// ParallaxImages.astro
+---
+
+<div class="parallax-container mt-2 mb-2 relative w-full overflow-hidden">
+	<div class="parallax-layer layer-1 absolute inset-0 z-10">
+		<slot name="layer-1" />
+	</div>
+	<div class="parallax-layer layer-2 absolute inset-0 z-20">
+		<slot name="layer-2" />
+	</div>
+	<div class="parallax-layer layer-3 absolute inset-0 z-30">
+		<slot name="layer-3" />
+	</div>
+	<div class="parallax-layer layer-4 absolute inset-0 z-40">
+		<slot name="layer-4" />
+	</div>
+</div>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	const container = document.querySelector(".parallax-container");
+
+	if (container) {
+		const layers = container.querySelectorAll(".parallax-layer");
+
+		layers.forEach((layer, index) => {
+			const speed = (4 - index) * 0.3;
+			const direction = 1;
+
+			gsap.to(layer, {
+				yPercent: direction * speed * 50,
+				ease: "none",
+				scrollTrigger: {
+					trigger: container,
+					start: "top 20% top",
+					end: "bottom top",
+					scrub: 1,
+				},
+			});
+
+			// Efecto adicional de escala en hover
+			// const img = layer.querySelector("img");
+			// if (img) {
+			// 	img.classList.add("transition-transform", "duration-700");
+			// 	layer.addEventListener("mouseenter", () => {
+			// 		gsap.to(img, {
+			// 			scale: 1,
+			// 			duration: 0.7,
+			// 			ease: "power2.out",
+			// 		});
+			// 	});
+			// 	layer.addEventListener("mouseleave", () => {
+			// 		gsap.to(img, {
+			// 			scale: 1,
+			// 			duration: 0.7,
+			// 			ease: "power2.out",
+			// 		});
+			// 	});
+			// }
+		});
+	}
+</script>
+
+<style>
+	.parallax-container {
+		border-radius: 24px;
+		aspect-ratio: 2 / 0.9;
+		height: auto;
+
+		@media (width < 1024px) {
+			height: 60vh;
+		}
+	}
+
+	.parallax-layer {
+		will-change: transform;
+		border-radius: 24px;
+		overflow: hidden;
+	}
+
+	.parallax-layer :global(img) {
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		object-position: bottom center;
+		object-fit: cover;
+	}
+
+	/* elemento {
+		translate: none;
+		rotate: none;
+		scale: none;
+		transform: translate(0px);
+	} */
+
+	/* elemento {
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		object-position: bottom center;
+		object-fit: cover;
+	} */
+
+	.layer-1 {
+		opacity: 1;
+	}
+	.layer-2 {
+		opacity: 1;
+	}
+	.layer-3 {
+		opacity: 1;
+	}
+	.layer-4 {
+		opacity: 1;
+	}
+</style>
