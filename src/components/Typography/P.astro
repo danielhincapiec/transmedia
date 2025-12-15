@@ -2,13 +2,19 @@
 interface Props {
 	dark?: boolean;
 	class?: string;
+	dataAnimate?: boolean;
 }
 
-const { dark = false, class: className = "" } = Astro.props;
+const {
+	dark = false,
+	class: className = "",
+	dataAnimate = false,
+} = Astro.props;
 ---
 
 <p
 	class={`text-[18px] mb-1 ${dark ? "text-custom-corn" : "text-custom-gray"} ${className}`}
+	data-animate={dataAnimate || null}
 >
 	<slot />
 </p>

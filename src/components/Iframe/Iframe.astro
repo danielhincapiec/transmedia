@@ -1,12 +1,13 @@
 ---
-const { url, class: className = "" } = Astro.props;
+const { url, class: className = "", dataAnimate = false } = Astro.props;
 ---
 
 <iframe
-	class={`video rounded-2xl mb-4 block w-full aspect-video ${className}`}
+	class={`video rounded-2xl mb-4 block w-full aspect-video bg-custom-pink-dark ${className}`}
 	src={url}
 	title="YouTube video player"
 	frameborder="0"
 	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 	referrerpolicy="strict-origin-when-cross-origin"
-	allowfullscreen></iframe>
+	allowfullscreen
+	data-animate={dataAnimate || null}></iframe>

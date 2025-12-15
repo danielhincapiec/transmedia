@@ -2,20 +2,37 @@
 // ParallaxImages.astro
 ---
 
-<div class="parallax-container mt-2 mb-2 relative w-full overflow-hidden">
-	<div class="parallax-layer layer-1 absolute inset-0 z-10">
-		<slot name="layer-1" />
-	</div>
-	<div class="parallax-layer layer-2 absolute inset-0 z-20">
-		<slot name="layer-2" />
-	</div>
-	<div class="parallax-layer layer-3 absolute inset-0 z-30">
-		<slot name="layer-3" />
-	</div>
-	<div class="parallax-layer layer-4 absolute inset-0 z-40">
-		<slot name="layer-4" />
-	</div>
-</div>
+<h1>
+	<span
+		class="parallax-container block mb-2 relative w-full overflow-hidden rounded-2xl"
+	>
+		<span
+			class="parallax-layer block layer-1 absolute inset-0 z-10 rounded-2xl"
+		>
+			<slot name="layer-1" />
+		</span>
+		<span
+			class="parallax-layer block layer-2 absolute inset-0 z-20 rounded-2xl"
+		>
+			<slot name="layer-2" />
+		</span>
+		<span
+			class="parallax-layer block layer-3 absolute inset-0 z-30 rounded-2xl"
+		>
+			<slot name="layer-3" />
+		</span>
+		<span
+			class="parallax-layer layer-4 absolute inset-0 z-40 rounded-2xl h-full flex items-end pb-[3.3em] lg:pb-[2em] text-custom-corn opacity-85 justify-center uppercase text-3xl lg:text-7xl"
+		>
+			<slot name="layer-4" />
+		</span>
+		<span
+			class="parallax-layer layer-5 absolute inset-0 z-40 rounded-2xl h-full flex items-end font-black pb-[2em] lg:pb-[1em] text-custom-corn opacity-85 justify-center uppercase text-3xl lg:text-7xl"
+		>
+			<slot name="layer-5" />
+		</span>
+	</span>
+</h1>
 
 <script>
 	import { gsap } from "gsap";
@@ -29,7 +46,7 @@
 		const layers = container.querySelectorAll(".parallax-layer");
 
 		layers.forEach((layer, index) => {
-			const speed = (4 - index) * 0.3;
+			const speed = (5 - index) * 0.3;
 			const direction = 1;
 
 			gsap.to(layer, {
@@ -42,33 +59,12 @@
 					scrub: 1,
 				},
 			});
-
-			// Efecto adicional de escala en hover
-			// const img = layer.querySelector("img");
-			// if (img) {
-			// 	img.classList.add("transition-transform", "duration-700");
-			// 	layer.addEventListener("mouseenter", () => {
-			// 		gsap.to(img, {
-			// 			scale: 1,
-			// 			duration: 0.7,
-			// 			ease: "power2.out",
-			// 		});
-			// 	});
-			// 	layer.addEventListener("mouseleave", () => {
-			// 		gsap.to(img, {
-			// 			scale: 1,
-			// 			duration: 0.7,
-			// 			ease: "power2.out",
-			// 		});
-			// 	});
-			// }
 		});
 	}
 </script>
 
 <style>
 	.parallax-container {
-		border-radius: 24px;
 		aspect-ratio: 2 / 0.9;
 		height: auto;
 
@@ -79,7 +75,6 @@
 
 	.parallax-layer {
 		will-change: transform;
-		border-radius: 24px;
 		overflow: hidden;
 	}
 
@@ -91,22 +86,7 @@
 		object-fit: cover;
 	}
 
-	/* elemento {
-		translate: none;
-		rotate: none;
-		scale: none;
-		transform: translate(0px);
-	} */
-
-	/* elemento {
-		width: 100%;
-		height: 100%;
-		max-width: none;
-		object-position: bottom center;
-		object-fit: cover;
-	} */
-
-	.layer-1 {
+	/* .layer-1 {
 		opacity: 1;
 	}
 	.layer-2 {
@@ -117,5 +97,5 @@
 	}
 	.layer-4 {
 		opacity: 1;
-	}
+	} */
 </style>

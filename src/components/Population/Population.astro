@@ -7,24 +7,11 @@ const borderColor = "border-custom-gray";
 ---
 
 <div
-	class=`mx-auto max-w-2xl py-3 mb-10 border-y-1  ${dark ? "border-custom-corn" : "border-gray-400"}`
+	class=`mx-auto max-w-2xl py-3 mb-10 border-y-1  ${dark ? "border-custom-corn" : "border-custom-gray"}`
+	data-animate
 >
 	<H2 dark={dark}>Población</H2>
 	<div class="_grid _grid-cols-1 _md:grid-cols-2 _gap-6">
-		<!-- <div class="">
-			{
-				data.map((item, index) => (
-					<div
-						class={`flex gap-2 pb-2 mb-2 items-center ${index !== data.length - 1 ? "border-b-1 border-dashed" : ""}  ${dark ? "border-custom-corn" : "border-gray-400"}`}
-					>
-						<P class="!text-5xl !font-black flex-1" dark={dark}>
-							{item.cifra}
-						</P>
-						<P dark={dark}>{item.texto}</P>
-					</div>
-				))
-			}
-		</div> -->
 		<div class="">
 			<P dark={dark}>
 				<slot />

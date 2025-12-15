@@ -15,7 +15,7 @@ interface Props {
 const { images, columns = 1 } = Astro.props;
 ---
 
-<div class="mb-8">
+<div class="mb-8" data-animate="true">
 	<div class="gallery-grid" style={`--columns: ${columns}`}>
 		{
 			images.map((image, index) => (
@@ -25,9 +25,9 @@ const { images, columns = 1 } = Astro.props;
 					data-index={index}
 				>
 					<img src={image.url} alt={image.texto} loading="lazy" />
-					<div class="gallery-overlay">
+					{/* <div class="gallery-overlay">
 						<span>{image.texto}</span>
-					</div>
+					</div> */}
 				</div>
 			))
 		}

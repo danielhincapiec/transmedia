@@ -5,7 +5,10 @@ import P from "@components/Typography/P.astro";
 const { data, dark } = Astro.props;
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto mb-10">
+<div
+	class="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto mb-10"
+	data-animate="true"
+>
 	{
 		data.map((item) => (
 			<div>

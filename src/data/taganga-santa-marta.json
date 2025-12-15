@@ -1,27 +1,27 @@
 {
-	"tituloInicio": "",
-	"tituloFin": "",
+	"tituloInicio": "Taganga",
+	"tituloFin": "Santa Marta",
 	"pie": "",
-	"documentalParrafo": "",
-	"documentalUrl": "",
-	"relatoUrl": "",
-	"relatoSubtitulo": "",
-	"relatoParrafo": "",
+	"documentalParrafo": "Somos el Pueblo Taganga, nacidos entre la montaña y el mar, donde cada ola guarda la memoria de nuestros mayores. Hemos resistido desde la pesca artesanal, la espiritualidad y el cuidado de nuestras aguas. Seguimos tejiendo comunidad y manteniendo viva la tradición que sostiene nuestra identidad.",
+	"documentalUrl": "https://www.youtube.com/embed/JFiXAmzOrlE?si=BUkDmvK1wYrAruES",
+	"relatoUrl": "https://www.youtube.com/embed/FZ19agsKUe4?si=2tMZoYBYc8jEcOy4",
+	"relatoSubtitulo": "Pueblo Taganga – Relación profunda y antigua con el mar",
+	"relatoParrafo": "La relación del pueblo de Taganga con el mar es profunda y antigua. Pueblo de pescadores con herencia indígena Caribe, revitalizan hoy su identidad a través de sus prácticas, su memoria y el vínculo espiritual con las aguas que los nutren.",
 	"capsulas": [
 		{
-			"url": "",
-			"texto": ""
+			"url": "https://www.youtube.com/embed/u8libXCHnG4?si=jpmzh4rAGIxJzatn",
+			"texto": "Lengua Taganga"
 		},
 		{
-			"url": "",
-			"texto": ""
+			"url": "https://www.youtube.com/embed/hd4Clagy66E?si=IJr9jqxRq7OVk90g",
+			"texto": "Mujer Taganga"
 		},
 		{
-			"url": "",
-			"texto": ""
+			"url": "https://www.youtube.com/embed/eWG32tfWnf8?si=UAk-ZoUbsu0IDETN",
+			"texto": "Tejido Taganga"
 		}
 	],
-	"poblacionParrafo": "",
+	"poblacionParrafo": "Somos el Pueblo Indígena de Taganga, somos Peibuni-Tuxe, uno de los pueblos que habitan la Sierra Nevada de Santa Marta y guardianes del maritorio. En nuestra sangre está viva la memoria de un pueblo negado a desaparecer, encontrando en el agua la forma más valiente de resistencia.",
 	"poblacion": [
 		{
 			"cifra": "",
@@ -36,7 +36,7 @@
 			"texto": ""
 		}
 	],
-	"fotogaleriaParrafo": "",
+	"fotogaleriaParrafo": "Este registro fotográfico recoge los pasos, los gestos y las memorias que acompañaron la creación del Túnel del Tiempo en cada uno de los pueblos. Son imágenes que guardan la luz del territorio, la palabra compartida y la fuerza espiritual que guiaron este ejercicio de comunicación propia. Fotografías: Jorge Martínez",
 	"fotogaleria": [
 		{
 			"texto": ""
