@@ -6,19 +6,19 @@
 		},
 		{
 			"name": "Micro documentales",
-			"href": "/"
+			"href": "/micro-documentales"
 		},
 		{
 			"name": "Relatos sonoros",
-			"href": "/"
+			"href": "/relatos"
 		},
 		{
 			"name": "Cápsulas sonoras",
-			"href": "/"
+			"href": "/capsulas"
 		},
 		{
 			"name": "Foto Galerias",
-			"href": "/"
+			"href": "/galerias"
 		}
 	]
 }

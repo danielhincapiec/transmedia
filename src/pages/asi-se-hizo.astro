@@ -1,0 +1,83 @@
+---
+import Layout from "@src/layouts/LayoutPage.astro";
+import Container from "@components/Containers/Container.astro";
+import Iframe from "@src/components/Iframe/Iframe.astro";
+import H2 from "@src/components/Typography/H2.astro";
+import P from "@src/components/Typography/P.astro";
+import Story from "@src/components/Story/Story.astro";
+import Capsules from "@src/components/Capsules/Capsules.astro";
+import Population from "@src/components/Population/Population.astro";
+import Gallery from "@src/components/Gallery/Gallery.astro";
+import MainImagen from "@src/components/MainImagen/MainImagen.astro";
+import Sites from "@src/components/Sites/Sites.astro";
+
+// data
+import place1 from "@src/data/arhuacos-katanzama.json";
+import place2 from "@src/data/ette-ennaka-nara-kajmanta.json";
+import place3 from "@src/data/kankuamo-atanquez.json";
+import place4 from "@src/data/kogui-malezhi.json";
+import place5 from "@src/data/taganga-santa-marta.json";
+import place6 from "@src/data/wayuu-santa-marta.json";
+import place7 from "@src/data/wiwa-gotsezhy.json";
+
+// bg
+import bgImg from "@assets/img/fondo.jpg";
+
+// main
+import imgMain3 from "@assets/img/layer-3.webp";
+import imgMain4 from "@assets/img/layer-4.webp";
+import imgMain5 from "@assets/img/layer-5.webp";
+import imgMain6 from "@assets/img/layer-6.webp";
+import imgMain7 from "@assets/img/layer-7-2.webp";
+import imgMain8 from "@assets/img/layer-8.webp";
+import ContainerAnimate from "@src/components/Containers/ContainerAnimate.astro";
+
+const dark = false;
+const bg = `url(${bgImg.src})`;
+
+// Unificar todos los arrays
+const places = [place1, place2, place3, place4, place5, place6, place7];
+
+const videos = places.map(({ relatoUrl, tituloInicio, tituloFin }) => ({
+	relatoUrl,
+	tituloInicio,
+	tituloFin,
+}));
+---
+
+<Layout bg="" dark={dark}>
+	<div
+		class="ml-2 mr-2 overflow-hidden rounded-2xl mt-4 mb-6"
+		style={`background-image: ${bg}`}
+	>
+		<div class="relative bottom-[-20px]">
+			<MainImagen>
+				<img src={imgMain8.src} slot="layer-1" alt="" />
+				<img src={imgMain7.src} slot="layer-2" alt="" />
+				<img src={imgMain6.src} slot="layer-3" alt="" />
+				<img src={imgMain5.src} slot="layer-4" alt="" />
+				<img src={imgMain4.src} slot="layer-5" alt="" />
+				<img src={imgMain3.src} slot="layer-6" alt="" />
+				<span slot="layer-7"> Así </span>
+				<span slot="layer-8"> Se hizo </span>
+			</MainImagen>
+		</div>
+	</div>
+
+	<ContainerAnimate class="pt-3 pb-8" data-animate>
+		<H2 dataAnimate class="">Documental</H2>
+		<Iframe
+			url="https://www.youtube.com/embed/4cicdfFs_D0?si=tK6OQUXyk7FUnRVI"
+			dataAnimate
+		/>
+		<div class="max-w-2xl mx-auto">
+			<H2 dataAnimate class="">Créditos</H2>
+			<P class=""
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+				necessitatibus accusamus temporibus facere, aperiam doloremque,
+				voluptatum quasi ea sint itaque, laboriosam corporis officia sapiente
+				maxime cupiditate accusantium incidunt ut? Quidem.</P
+			>
+		</div>
+	</ContainerAnimate>
+</Layout>

@@ -4,14 +4,23 @@ import LogoMinCultura from "@assets/img/logo-mincultura.png";
 import LogoSantaMarta from "@assets/img/logo-santa-marta.png";
 ---
 
-<Container class="full bg-custom-pink p-6">
-	<div>
-		<a href="/" class="block md:flex items-center gap-3 py-1 w-full lg:w-max">
-			<img src={LogoMinCultura.src} class="mb-3 lg:mb-0 mx-auto" />
-			<div class="hidden lg:block border-r-1 border-white h-full"></div>
-			<p class="text-white lg:max-w-[200px] text-center lg:text-left">
-				Ministerio de las Culturas las Artes y los Saberes
-			</p>
-		</a>
-	</div>
+<a
+	class="block px-3 py-2 mx-auto mb-6 rounded-xl w-max bg-custom-pink hover:bg-custom-pink-dark text-custom-corn font-bold"
+	href="/">Regresar al mapa</a
+>
+
+<Container
+	class="full bg-custom-pink p-6 flex flex-col justify-center items-center"
+>
+	<a
+		href="/"
+		class="block md:flex flex-col items-center gap-3 py-1 w-full lg:w-max"
+		style="align-items: center;"
+	>
+		<img src={LogoMinCultura.src} class="mb-3 lg:mb-0 mx-auto" />
+		<div class="lg:block border-t border-white/50 w-[70%]"></div>
+		<p class="text-white lg:max-w-[200px] text-center">
+			Ministerio de las Culturas las Artes y los Saberes
+		</p>
+	</a>
 </Container>

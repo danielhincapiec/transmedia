@@ -1,13 +1,94 @@
 ---
+// src/components/Iframe.astro
 const { url, class: className = "", dataAnimate = false } = Astro.props;
+
+// Extraer el ID del video de YouTube
+const getVideoId = (url: string) => {
+	const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+	const match = url.match(regExp);
+	return match && match[2].length === 11 ? match[2] : null;
+};
+
+const videoId = getVideoId(url);
 ---
 
-<iframe
-	class={`video rounded-2xl mb-4 block w-full aspect-video bg-custom-pink-dark ${className}`}
-	src={url}
-	title="YouTube video player"
-	frameborder="0"
-	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-	referrerpolicy="strict-origin-when-cross-origin"
-	allowfullscreen
-	data-animate={dataAnimate || null}></iframe>
+<div
+	class={`youtube-lazy-container rounded-2xl mb-4 block w-full aspect-video bg-custom-pink-dark ${className}`}
+	data-video-id={videoId}
+	data-video-url={url}
+	data-animate={dataAnimate || null}
+>
+	<!-- Thumbnail como placeholder -->
+	<div class="youtube-placeholder relative w-full h-full cursor-pointer group">
+		<img
+			src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+			alt="Video thumbnail"
+			class="w-full h-full object-cover rounded-2xl"
+			loading="lazy"
+		/>
+		<!-- Play button overlay -->
+		<div class="absolute inset-0 flex items-center justify-center">
+			<div
+				class="bg-black/60 group-hover:bg-black/80 rounded-full p-2 transition-all"
+			>
+				<svg
+					class="w-10 h-10 text-white"
+					fill="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path d="M8 5v14l11-7z"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const containers = document.querySelectorAll(".youtube-lazy-container");
+
+		containers.forEach((container) => {
+			const placeholder = container.querySelector(".youtube-placeholder");
+			const videoUrl = container.getAttribute("data-video-url");
+			const dataAnimate = container.getAttribute("data-animate");
+
+			placeholder?.addEventListener("click", () => {
+				if (!videoUrl) return;
+
+				// Crear el iframe
+				const iframe = document.createElement("iframe");
+				iframe.className = "video rounded-2xl w-full h-full";
+				iframe.src = `${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`;
+				iframe.title = "YouTube video player";
+				iframe.frameBorder = "0";
+				iframe.allow =
+					"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+				iframe.referrerPolicy = "strict-origin-when-cross-origin";
+				iframe.allowFullscreen = true;
+
+				if (dataAnimate) {
+					iframe.setAttribute("data-animate", dataAnimate);
+				}
+
+				// Reemplazar el placeholder con el iframe
+				container.innerHTML = "";
+				container.appendChild(iframe);
+			});
+		});
+	});
+</script>
+
+<style>
+	.youtube-lazy-container {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.youtube-placeholder {
+		transition: transform 0.3s ease;
+	}
+
+	.youtube-placeholder:hover {
+		transform: scale(1.02);
+	}
+</style>

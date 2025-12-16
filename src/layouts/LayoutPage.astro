@@ -19,7 +19,7 @@ const { title, bg, dark } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{title ? `${title} | Mi Sitio Web` : "Mi Sitio Web"}</title>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body class=` ${dark ? "bg-custom-gray " : "bg-custom-corn"}`>
@@ -44,7 +44,6 @@ const { title, bg, dark } = Astro.props;
 		background-image: var(--bg);
 		background-size: cover;
 	}
-
 	.logo {
 		height: 40px;
 	}

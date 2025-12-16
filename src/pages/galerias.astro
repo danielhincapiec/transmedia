@@ -1,0 +1,491 @@
+---
+import Layout from "@src/layouts/LayoutPage.astro";
+import Container from "@components/Containers/Container.astro";
+import Iframe from "@src/components/Iframe/Iframe.astro";
+import H2 from "@src/components/Typography/H2.astro";
+import P from "@src/components/Typography/P.astro";
+import Story from "@src/components/Story/Story.astro";
+import Capsules from "@src/components/Capsules/Capsules.astro";
+import Population from "@src/components/Population/Population.astro";
+import Gallery from "@src/components/Gallery/Gallery.astro";
+import MainImagen from "@src/components/MainImagen/MainImagen.astro";
+
+// bg
+import bgImg from "@assets/img/fondo.jpg";
+
+// main
+import imgMain3 from "@assets/img/layer-3.webp";
+import imgMain4 from "@assets/img/layer-4.webp";
+import imgMain5 from "@assets/img/layer-5.webp";
+import imgMain6 from "@assets/img/layer-6.webp";
+import imgMain7 from "@assets/img/layer-7-2.webp";
+import imgMain8 from "@assets/img/layer-8.webp";
+import ContainerAnimate from "@src/components/Containers/ContainerAnimate.astro";
+
+// gallery
+// arhuacos-katanzama
+import Photo1 from "@assets/img/arhuacos-katanzama/gallery/foto-1.webp";
+import Photo2 from "@assets/img/arhuacos-katanzama/gallery/foto-2.webp";
+import Photo3 from "@assets/img/arhuacos-katanzama/gallery/foto-3.webp";
+import Photo4 from "@assets/img/arhuacos-katanzama/gallery/foto-4.webp";
+import Photo5 from "@assets/img/arhuacos-katanzama/gallery/foto-5.webp";
+import Photo6 from "@assets/img/arhuacos-katanzama/gallery/foto-6.webp";
+import Photo7 from "@assets/img/arhuacos-katanzama/gallery/foto-7.webp";
+
+// ette-ennaka-nara-kajmanta
+import Photo8 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-1.webp";
+import Photo9 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-2.webp";
+import Photo10 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-3.webp";
+import Photo11 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-4.webp";
+import Photo12 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-5.webp";
+import Photo13 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-6.webp";
+import Photo14 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-7.webp";
+import Photo15 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-8.webp";
+import Photo16 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-9.webp";
+import Photo17 from "@assets/img/ette-ennaka-nara-kajmanta/gallery/foto-10.webp";
+
+// kankuamo
+import Photo18 from "@assets/img/kankuamo/gallery/foto-1.webp";
+import Photo19 from "@assets/img/kankuamo/gallery/foto-2.webp";
+import Photo20 from "@assets/img/kankuamo/gallery/foto-3.webp";
+import Photo21 from "@assets/img/kankuamo/gallery/foto-4.webp";
+import Photo22 from "@assets/img/kankuamo/gallery/foto-5.webp";
+import Photo23 from "@assets/img/kankuamo/gallery/foto-6.webp";
+import Photo24 from "@assets/img/kankuamo/gallery/foto-7.webp";
+import Photo25 from "@assets/img/kankuamo/gallery/foto-8.webp";
+
+// kogui
+import Photo26 from "@assets/img/kogui/gallery/foto-1.webp";
+import Photo27 from "@assets/img/kogui/gallery/foto-2.webp";
+import Photo28 from "@assets/img/kogui/gallery/foto-3.webp";
+import Photo29 from "@assets/img/kogui/gallery/foto-4.webp";
+import Photo30 from "@assets/img/kogui/gallery/foto-5.webp";
+import Photo31 from "@assets/img/kogui/gallery/foto-6.webp";
+import Photo32 from "@assets/img/kogui/gallery/foto-7.webp";
+
+// taganga
+import Photo33 from "@assets/img/taganga/gallery/foto-1.webp";
+import Photo34 from "@assets/img/taganga/gallery/foto-2.webp";
+import Photo35 from "@assets/img/taganga/gallery/foto-3.webp";
+import Photo36 from "@assets/img/taganga/gallery/foto-4.webp";
+import Photo37 from "@assets/img/taganga/gallery/foto-5.webp";
+import Photo38 from "@assets/img/taganga/gallery/foto-6.webp";
+import Photo39 from "@assets/img/taganga/gallery/foto-7.webp";
+import Photo40 from "@assets/img/taganga/gallery/foto-8.webp";
+
+// wayuu
+import Photo41 from "@assets/img/wayuu/gallery/foto-1.webp";
+import Photo42 from "@assets/img/wayuu/gallery/foto-2.webp";
+import Photo43 from "@assets/img/wayuu/gallery/foto-3.webp";
+import Photo44 from "@assets/img/wayuu/gallery/foto-4.webp";
+import Photo45 from "@assets/img/wayuu/gallery/foto-5.webp";
+import Photo46 from "@assets/img/wayuu/gallery/foto-6.webp";
+import Photo47 from "@assets/img/wayuu/gallery/foto-7.webp";
+import Photo48 from "@assets/img/wayuu/gallery/foto-8.webp";
+import Photo49 from "@assets/img/wayuu/gallery/foto-9.webp";
+import Photo50 from "@assets/img/wayuu/gallery/foto-10.webp";
+
+// wiwa
+import Photo51 from "@assets/img/wiwa/gallery/foto-1.webp";
+import Photo52 from "@assets/img/wiwa/gallery/foto-2.webp";
+import Photo53 from "@assets/img/wiwa/gallery/foto-3.webp";
+import Photo54 from "@assets/img/wiwa/gallery/foto-4.webp";
+import Photo55 from "@assets/img/wiwa/gallery/foto-5.webp";
+import Photo56 from "@assets/img/wiwa/gallery/foto-6.webp";
+import Photo57 from "@assets/img/wiwa/gallery/foto-7.webp";
+import Photo58 from "@assets/img/wiwa/gallery/foto-8.webp";
+import Photo59 from "@assets/img/wiwa/gallery/foto-9.webp";
+import Photo60 from "@assets/img/wiwa/gallery/foto-10.webp";
+
+const gallery = [
+	{
+		url: Photo1.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo2.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo3.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo4.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo5.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo6.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo7.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo8.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo9.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo10.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo11.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo12.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo13.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo14.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo15.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo16.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo17.src,
+		texto: "",
+		row: 2,
+		col: 2,
+	},
+	{
+		url: Photo18.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo19.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo20.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo21.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo22.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo23.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo24.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo25.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo26.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo27.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo28.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo29.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo30.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo31.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo32.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo33.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo34.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo35.src,
+		texto: "",
+		row: 2,
+		col: 2,
+	},
+	{
+		url: Photo36.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo37.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo38.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo39.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo40.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo41.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo42.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo43.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo44.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo45.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo46.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo47.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo48.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo49.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo50.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo51.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo52.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo53.src,
+		texto: "",
+		row: 2,
+		col: 1,
+	},
+	{
+		url: Photo54.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo55.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo56.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo57.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo58.src,
+		texto: "",
+		row: 1,
+		col: 2,
+	},
+	{
+		url: Photo59.src,
+		texto: "",
+		row: 1,
+		col: 1,
+	},
+	{
+		url: Photo60.src,
+		texto: "",
+		row: 2,
+		col: 2,
+	},
+];
+
+const dark = false;
+const bg = `url(${bgImg.src})`;
+---
+
+<Layout bg="" dark={dark}>
+	<div
+		class="ml-2 mr-2 overflow-hidden rounded-2xl mt-4 mb-6"
+		style={`background-image: ${bg}`}
+	>
+		<div class="relative bottom-[-20px]">
+			<MainImagen>
+				<img src={imgMain8.src} slot="layer-1" alt="" />
+				<img src={imgMain7.src} slot="layer-2" alt="" />
+				<img src={imgMain6.src} slot="layer-3" alt="" />
+				<img src={imgMain5.src} slot="layer-4" alt="" />
+				<img src={imgMain4.src} slot="layer-5" alt="" />
+				<img src={imgMain3.src} slot="layer-6" alt="" />
+				<span slot="layer-7"> Galeria </span>
+				<span slot="layer-8"> fotográfica </span>
+			</MainImagen>
+		</div>
+	</div>
+
+	<div class="mx-2">
+		<Gallery images={gallery} columns="4" />
+	</div>
+
+	<ContainerAnimate class="pt-3 pb-8" data-animate />
+</Layout>
