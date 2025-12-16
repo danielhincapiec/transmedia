@@ -118,6 +118,9 @@ const { class: className } = Astro.props;
 		background-image: var(--bg);
 		background-position: center center;
 		background-size: cover;
+		will-change: transform;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
 	}
 
 	.scene {
@@ -158,10 +161,32 @@ const { class: className } = Astro.props;
 		left: -5%;
 		top: -5%;
 
+		will-change: transform;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-perspective: 1000px;
+		perspective: 1000px;
+		/* Forzar un nuevo contexto de apilamiento */
+		isolation: isolate;
+
 		.thumbnail {
 			@media (width < 768px) {
 				display: none;
 			}
+		}
+	}
+
+	@supports (-webkit-appearance: none) {
+		.scene,
+		.layer {
+			-webkit-transform: translate3d(0, 0, 0);
+			-webkit-font-smoothing: antialiased;
+			-webkit-backface-visibility: hidden;
+		}
+
+		.wrap-scene {
+			overflow: hidden;
+			-webkit-transform: translateZ(0);
 		}
 	}
 
@@ -295,10 +320,23 @@ const { class: className } = Astro.props;
 		const scene = document.getElementById("scene");
 		if (scene) {
 			const parallaxInstance = new Parallax(scene, {
+				relativeInput: true,
+				clipRelativeInput: false,
+				hoverOnly: false,
+				// Añade estas opciones clave:
+				calibrateX: false,
+				calibrateY: false,
+				invertX: false,
+				invertY: false,
+				limitX: false,
+				limitY: false,
+				frictionX: 0.1, // Aumenta para suavizar
+				frictionY: 0.1, // Aumenta para suavizar
 				originX: 0.3,
 				originY: 0.5,
 				scalarX: 10,
 				scalarY: 15,
+				pointerEvents: false,
 			});
 
 			const handleMobileView = () => {
