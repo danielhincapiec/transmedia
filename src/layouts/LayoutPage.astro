@@ -33,7 +33,7 @@ const { title, bg, dark } = Astro.props;
 			</Container>
 			<MainMenu items={mainMenuJson.items} class="main-menu flex z-20" />
 			<slot />
-			<Footer />
+			<Footer dark={dark} />
 		</div>
 	</body>
 </html>

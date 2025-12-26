@@ -15,8 +15,13 @@ const { class: ClassName } = Astro.props;
 <div
 	class=`thumbnails-movil fixed inset-0 mt-[70px] w-full h-dvh flex-col ${Astro.props.class ||" "}`
 >
-	<Thumbnail name="Wiwa Gotsezhy" img={thumb_wiwa.src} class="wiwa thumbnail" />
-	<Thumbnail name="Kogui Malezhi" img={thumb_kogui.src} class="kogui" />
+	<Thumbnail
+		name="Wiwa Gotsezhy"
+		img={thumb_wiwa.src}
+		class="wiwa thumbnail"
+		url="wiwa-gotsezhy"
+	/>
+	<Thumbnail name="Kogui Malezhi" img={thumb_kogui.src} class="kogui" url="" />
 	<Thumbnail
 		name="Ette Ennaka Nara Kajmanta"
 		img={thumb_ette.src}

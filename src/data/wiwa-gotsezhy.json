@@ -1,27 +1,27 @@
 {
-	"tituloInicio": "Kankuamo",
-	"tituloFin": "Atanquez",
+	"tituloInicio": "Wiwa",
+	"tituloFin": "Gotsezhy",
 	"pie": "",
-	"documentalParrafo": "Somos el Pueblo Kankuamo, hijos de la Sierra Nevada y guardianes de su equilibrio. Aún cuando casi nos extinguieron, jamás dejamos de tocar el carrizo ni de elevar nuestra palabra espiritual. resistimos desde la memoria, la música y la revitalización de nuestra cultura, que vuelve a florecer con fuerza.",
-	"documentalUrl": "https://www.youtube.com/embed/p18BGvxtxjg?si=CBBOJxCi6iUDrymv",
-	"relatoUrl": "https://www.youtube.com/embed/wa1C9sEgq8Q?si=jGebVbMnFlFuykHJ",
-	"relatoSubtitulo": "Pueblo Kankuamo – El chicote y la música como compañía ancestral",
-	"relatoParrafo": "El chicote y la música han acompañado ancestralmente al pueblo Kankuamo. La música ha sido portadora de su conocimiento, una forma de memoria viva y un instrumento para resistir, sanar y fortalecer su identidad colectiva.",
+	"documentalParrafo": "Somos el pueblo Wiwa, habitantes ancestrales de la Sierra Nevada, presentes mucho antes de la llegada de los colonos.Su invasión nos afectó y nos dividió, pero no quebró nuestra raíz. Hoy nos fortalecemos desde la cultura, la palabra espiritual y el legado de nuestros líderes, como Ramón Gil.",
+	"documentalUrl": "https://www.youtube.com/embed/ALffhsbx6wU?si=xcPboSEXY44Vw_KT",
+	"relatoUrl": "https://www.youtube.com/embed/rghdcL601vI?si=wNphhjVwF9v4vt4u",
+	"relatoSubtitulo": "Pueblo Wiwa – Revitalizar el territorio y la identidad",
+	"relatoParrafo": "Este relato nos muestra cómo el pueblo Wiwa ha revitalizado su territorio y su identidad gracias a liderazgos espirituales y comunitarios, como el de Ramón Gil, que ha guiado la reconstrucción cultural tras procesos de división y despojo.",
 	"capsulas": [
 		{
-			"url": "https://www.youtube.com/embed/MyD9k0hLaSI?si=QbwGHj2CBBgAdLRY",
-			"texto": "Lengua Kankuamo"
+			"url": "https://www.youtube.com/embed/A_3h46_qkqI?si=QwMxJBtp9jm2JPrz",
+			"texto": "Lengua Wiwa"
 		},
 		{
-			"url": "https://www.youtube.com/embed/QbBaRWIkHlw?si=55L8qvfIukEf-KLl",
-			"texto": "Mujer Kankuamo"
+			"url": "https://www.youtube.com/embed/mcg6uta7xoI?si=Pnb-9y60raYZ88Dz",
+			"texto": "Mujer Wiwa"
 		},
 		{
-			"url": "https://www.youtube.com/embed/cpn67zIf440?si=tj3Z3HSKDtwcGyTB",
-			"texto": "Tejido Kankuamo"
+			"url": "https://www.youtube.com/embed/0OwYpWJ_Hc8?si=wuxuT6pG3j_ENK_L",
+			"texto": "Tejido Wiwa"
 		}
 	],
-	"poblacionParrafo": "Somos el Pueblo Kankuamo, guardianes de la Sierra Nevada y herederos de una memoria que canta en nuestras montañas. Nuestra música —hecha de tambores, flautas y palabra— es un acto vivo de resistencia, un camino para cuidar el territorio y mantener encendida la sabiduría ancestral que nos guía.",
+	"poblacionParrafo": "Somos el Pueblo Wiwa, guardián perenne de la Sierra Nevada como origen de la vida. Guiados por la sabiduría de nuestros ancestros, custodiamos el orden sagrado que hila el mundo. Nuestro pensamiento y nuestra ofrenda alimentan, con firmeza y respeto, el latido vital que nos entreteje a todos los seres.",
 	"poblacion": [
 		{
 			"cifra": "",
@@ -36,7 +36,7 @@
 			"texto": ""
 		}
 	],
-	"fotogaleriaParrafo": "Este registro fotográfico recoge los pasos, los gestos y las memorias que acompañaron la creación del Túnel del Tiempo en cada uno de los pueblos. Son imágenes que guardan la luz del territorio, la palabra compartida y la fuerza espiritual que guiaron este ejercicio de comunicación propia.Fotografías: Jorge Martínez",
+	"fotogaleriaParrafo": "Este registro fotográfico recoge los pasos, los gestos y las memorias que acompañaron la creación del Túnel del Tiempo en cada uno de los pueblos. Son imágenes que guardan la luz del territorio, la palabra compartida y la fuerza espiritual que guiaron este ejercicio de comunicación propia. Fotografías: Jorge Martínez",
 	"fotogaleria": [
 		{
 			"texto": ""

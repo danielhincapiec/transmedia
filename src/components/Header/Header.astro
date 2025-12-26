@@ -8,9 +8,7 @@ const { class: className } = Astro.props;
 <header
 	class={`hidden md:block bg-custom-pink p-2  rounded-2xl rounded-t-0 relative top-[-30px] ${Astro.props.class || ""}`}
 >
-	<div
-		class="header__container border-1 border-white p-2 pt-3 rounded-2xl rounded-t-0"
-	>
+	<div class="border-1 border-white p-2 pt-3 rounded-2xl rounded-t-0">
 		<a href="/" class="flex gap-1 mb-3">
 			<img src={LogoMinCultura.src} />
 			<div class="border-r-1 border-white opacity-50"></div>
@@ -18,9 +16,10 @@ const { class: className } = Astro.props;
 		</a>
 		<div class="flex gap-3">
 			<img src={tunel.src} />
-			<p class="text-white relative top-[-4px] max-w-[250px]">
-				Un recorrido a través de las Culturas de los pueblos de La Sierra Nevada
-				de Santa Marta.
+			<p class="text-white relative top-[-4px] max-w-[300px]">
+				Un tejido de palabra y memoria que honra y reivindica la resistencia
+				cultural y espiritual de los siete pueblos indígenas presentes en el
+				distrito de Santa Marta.
 			</p>
 		</div>
 	</div>

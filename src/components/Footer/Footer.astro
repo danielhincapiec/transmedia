@@ -2,12 +2,24 @@
 import Container from "@components/Containers/Container.astro";
 import LogoMinCultura from "@assets/img/logo-mincultura.png";
 import LogoSantaMarta from "@assets/img/logo-santa-marta.png";
+
+const { dark } = Astro.props;
 ---
 
 <a
 	class="block px-3 py-2 mx-auto mb-6 rounded-xl w-max bg-custom-pink hover:bg-custom-pink-dark text-custom-corn font-bold"
 	href="/">Regresar al mapa</a
 >
+
+<p
+	class=`mx-auto max-w-2xl mb-4 mt-4 ${dark ? "text-custom-corn" : "text-custom-gray"} `
+>
+	El transmedia Túnel del Tiempo y sus contenidos son el resultado de un
+	ejercicio de comunicación propia desarrollado por los siete pueblos indígenas
+	con presencia ancestral en Santa Marta, en el marco de los acuerdos del
+	Capítulo Étnico de la Comisión Preparatoria de los 500 años de la ciudad, con
+	el apoyo del Ministerio de las Culturas, las Artes y los Saberes.
+</p>
 
 <Container
 	class="full bg-custom-pink p-6 flex flex-col justify-center items-center"

@@ -8,11 +8,14 @@ const { items: menuItems, class: className } = Astro.props;
 	class=`nav w-full flex gap-12 bg-custom-pink px-1.5 justify-between ${Astro.props.class || ""}`
 >
 	<div class="flex items-center">
-		<ul class="hidden md:flex gap-10">
+		<ul class="hidden md:flex">
 			{
 				menuItems.map((item) => (
 					<li>
-						<a href={item.href} class="text-white hover:underline">
+						<a
+							href={item.href}
+							class="block py-3 px-2 text-white hover:underline hover:bg-custom-pink-dark"
+						>
 							{item.name}
 						</a>
 					</li>
@@ -40,7 +43,7 @@ const { items: menuItems, class: className } = Astro.props;
 						<li class="block">
 							<a
 								href={item.href}
-								class="block p-2 md:p-4 xl:p-6 hover:bg-gray-100"
+								class="block p-2 md:p-4 xl:p-6 hover:bg-gray-100 pt-3 pb-3"
 							>
 								{item.name}
 							</a>
