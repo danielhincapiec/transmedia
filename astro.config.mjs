@@ -7,4 +7,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
 	vite: { plugins: [tailwindcss()], },
 	integrations: [svelte(), mdx()],
+	build: {
+		format: process.env.BUILD_FORMAT === 'directory' ? 'directory' : 'file'
+	}
 });

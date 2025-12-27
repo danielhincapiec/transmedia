@@ -9,6 +9,9 @@ import thumb_taganga from "@assets/img/thumb-taganga.png";
 import thumb_wayuu from "@assets/img/thumb-wayuu.png";
 import thumb_wiwa from "@assets/img/thumb-wiwa.png";
 
+const endUrl =
+	import.meta.env.BUILD_FORMAT === "directory" ? "/index.html" : "";
+
 const { class: ClassName } = Astro.props;
 ---
 
@@ -19,30 +22,44 @@ const { class: ClassName } = Astro.props;
 		name="Wiwa Gotsezhy"
 		img={thumb_wiwa.src}
 		class="wiwa thumbnail"
-		url="wiwa-gotsezhy"
+		url={`wiwa-gotsezhy` + endUrl}
 	/>
-	<Thumbnail name="Kogui Malezhi" img={thumb_kogui.src} class="kogui" url="" />
+	<Thumbnail
+		name="Kogui Malezhi"
+		img={thumb_kogui.src}
+		class="kogui"
+		url={`kogui-malezhi` + endUrl}
+	/>
 	<Thumbnail
 		name="Ette Ennaka Nara Kajmanta"
 		img={thumb_ette.src}
 		class="ette"
+		url={`ette-ennaka-nara-kajmanta` + endUrl}
 	/>
 	<Thumbnail
 		name="Kankuamo Atanquez"
 		img={thumb_kankuamo.src}
 		class="kankuamo"
+		url={`kankuamo-atanquez` + endUrl}
 	/>
 	<Thumbnail
 		name="Arhuacos Katanzama"
 		img={thumb_arhuacos.src}
 		class="arhuacos"
+		url={`arhuacos-katanzama` + endUrl}
 	/>
 	<Thumbnail
 		name="Taganga Santa Marta"
 		img={thumb_taganga.src}
 		class="taganga"
+		url={`taganga-santa-marta` + endUrl}
 	/>
-	<Thumbnail name="Wayuu Santa Marta" img={thumb_wayuu.src} class="wayuu" />
+	<Thumbnail
+		name="Wayuu Santa Marta"
+		img={thumb_wayuu.src}
+		class="wayuu"
+		url={`wayuu-santa-marta` + endUrl}
+	/>
 </div>
 
 <style>
@@ -67,7 +84,7 @@ const { class: ClassName } = Astro.props;
 
 		.thumbnail__img {
 			width: clamp(50px, 4vw, 110px);
-			border: 1px solid white;
+			/* border: 1px solid white; */
 			padding: 5px;
 		}
 	}

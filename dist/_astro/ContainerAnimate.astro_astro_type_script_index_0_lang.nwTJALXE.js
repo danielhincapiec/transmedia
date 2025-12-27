@@ -1,1 +1,0 @@
-import{g as r,S as t}from"./ScrollTrigger.lnFyu4_T.js";r.registerPlugin(t);const o=document.querySelectorAll("[data-animate]");o.forEach(e=>{r.set(e,{opacity:.5,filter:"blur(1px)",scale:.95,y:100}),r.to(e,{opacity:1,filter:"blur(0px)",scale:1,y:0,duration:1,ease:"power3.out",scrollTrigger:{trigger:e,start:"top 80%",end:"bottom top",toggleActions:"play reverse play reverse"}})});

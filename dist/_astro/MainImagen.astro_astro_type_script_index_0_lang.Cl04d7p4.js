@@ -1,0 +1,1 @@
+import{g as e,S as c}from"./ScrollTrigger.0lJgtTtq.js";e.registerPlugin(c);const r=document.querySelector(".parallax-container");r&&r.querySelectorAll(".parallax-layer").forEach((t,o)=>{const a=(5-o)*.3;e.to(t,{yPercent:1*a*50,ease:"none",scrollTrigger:{trigger:r,start:"top 20% top",end:"bottom top",scrub:1}})});

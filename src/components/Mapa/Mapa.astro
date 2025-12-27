@@ -49,6 +49,9 @@ const styleString = layerImports
 	})
 	.join(" ");
 
+const endUrl =
+	import.meta.env.BUILD_FORMAT === "directory" ? "/index.html" : "";
+
 const { class: className } = Astro.props;
 ---
 
@@ -60,22 +63,22 @@ const { class: className } = Astro.props;
 		<div class="layer layer-6" data-depth="0.4"></div>
 		<div class="layer layer-5" data-depth="0.5">
 			<Thumbnail
-				name="Wiwa Gotsezhy"
+				name="Wiwa\nGotsezhy"
 				img={thumb_wiwa.src}
 				class="wiwa"
-				url="wiwa-gotsezhy"
+				url={`wiwa-gotsezhy` + endUrl}
 			/>
 			<Thumbnail
-				name="Kogui Malezhi"
+				name="Kogui\nMalezhi"
 				img={thumb_kogui.src}
 				class="kogui"
-				url="kogui-malezhi"
+				url={`kogui-malezhi` + endUrl}
 			/>
 			<Thumbnail
-				name="Ette Ennaka Nara Kajmanta"
+				name="Ette Ennaka\nNara Kajmanta"
 				img={thumb_ette.src}
 				class="ette"
-				url="ette-ennaka-nara-kajmanta"
+				url={`ette-ennaka-nara-kajmanta` + endUrl}
 			/>
 		</div>
 		<div class="layer layer-4" data-depth="0.8">
@@ -83,25 +86,25 @@ const { class: className } = Astro.props;
 				name="Kankuamo Atanquez"
 				img={thumb_kankuamo.src}
 				class="kankuamo"
-				url="kankuamo-atanquez"
+				url={`kankuamo-atanquez` + endUrl}
 			/>
 			<Thumbnail
 				name="Arhuacos Katanzama"
 				img={thumb_arhuacos.src}
 				class="arhuacos"
-				url="arhuacos-katanzama"
+				url={`arhuacos-katanzama` + endUrl}
 			/>
 			<Thumbnail
-				name="Taganga Santa Marta"
+				name="Taganga\nSanta Marta"
 				img={thumb_taganga.src}
 				class="taganga"
-				url="taganga-santa-marta"
+				url={`taganga-santa-marta` + endUrl}
 			/>
 			<Thumbnail
-				name="Wayuu Santa Marta"
+				name="Wayuu\nSanta Marta"
 				img={thumb_wayuu.src}
 				class="wayuu"
-				url="wayuu-santa-marta"
+				url={`wayuu-santa-marta` + endUrl}
 			/>
 		</div>
 		<div class="layer layer-3" data-depth="1"></div>
@@ -335,7 +338,7 @@ const { class: className } = Astro.props;
 				originX: 0.3,
 				originY: 0.5,
 				scalarX: 10,
-				scalarY: 15,
+				scalarY: 3,
 				pointerEvents: false,
 			});
 
